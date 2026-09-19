@@ -2,20 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://finalistanbul.com"),
+  metadataBase: new URL("https://finalsatlas.com"),
   title: {
-    default: "Final Istanbul | Guide to Istanbul's Biggest Events",
-    template: "%s | Final Istanbul",
+    default: "Finals Atlas | Follow the Final. Discover the City.",
+    template: "%s | Finals Atlas",
   },
   description:
-    "Independent travel and matchday guide to Istanbul's biggest sporting events, finals, stadiums, transport, stays and city experiences.",
+    "A global travel guide to major sports finals: dates, host cities, stadiums, where to stay, how to get there and what to do around the event.",
   keywords: [
-    "Istanbul events",
-    "Istanbul finals",
-    "Spanish Super Cup Istanbul 2027",
-    "Conference League Final Istanbul 2027",
-    "Turkish Grand Prix 2027",
-    "Istanbul matchday guide",
+    "sports finals",
+    "finals calendar",
+    "final travel guide",
+    "Champions League final travel",
+    "Europa League final travel",
+    "stadium guides",
+    "host city guides",
+    "sports travel",
   ],
   alternates: {
     canonical: "/",
@@ -23,16 +25,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://finalistanbul.com",
-    siteName: "Final Istanbul",
-    title: "Final Istanbul | The Biggest Events. One Extraordinary City.",
+    url: "https://finalsatlas.com",
+    siteName: "Finals Atlas",
+    title: "Finals Atlas | Follow the Final. Discover the City.",
     description:
-      "Independent travel and matchday guide to Istanbul's biggest sporting events.",
+      "A global travel guide to major sports finals, host cities and stadiums.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Final Istanbul",
-    description: "The Biggest Events. One Extraordinary City.",
+    title: "Finals Atlas",
+    description: "Follow the Final. Discover the City.",
   },
 };
 
