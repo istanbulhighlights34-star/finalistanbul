@@ -1,0 +1,10 @@
+import Link from "next/link";
+
+export default function VenueGuide({ city, cityHref, name, label, lede, facts, paragraphs, eventLinks }: { city: string; cityHref: string; name: string; label: string; lede: string; facts: [string,string][]; paragraphs: string[]; eventLinks: {href:string;label:string}[] }) {
+ return <main className="content-page"><header className="page-header"><Link className="brand" href="/"><span>FINALS</span><span>ATLAS</span></Link><nav><Link href="/finals">Finals</Link><Link href={cityHref}>{city}</Link></nav><Link className="header-cta" href="/finals">2027 Calendar</Link></header>
+ <section className="page-hero"><p className="kicker">VENUE / {city.toUpperCase()}</p><h1>{name}<br/><span>{label}</span></h1><p className="page-lede">{lede}</p></section>
+ <section className="city-facts">{facts.map(([a,b])=><div key={a}><span>{a}</span><strong>{b}</strong></div>)}</section>
+ <section className="detail-section"><div className="detail-title"><p className="kicker">VENUE ORIENTATION</p><h2>KNOW THE GROUND BEFORE MATCHDAY.</h2></div><div className="prose-column">{paragraphs.map(p=><p key={p}>{p}</p>)}</div></section>
+ <section className="planning-section"><p className="kicker">2027 EVENTS</p><h2>FINALS AT THIS VENUE.</h2><div className="planning-grid">{eventLinks.map(e=><Link href={e.href} key={e.href}>{e.label} →</Link>)}<Link href={cityHref}>{city} city guide →</Link><Link href="/finals">All 2027 finals →</Link></div><p className="source-note">Event-specific gates, supporter zones and special transport operations are added only after official publication.</p></section>
+ <footer><div className="brand footer-brand"><span>FINALS</span><span>ATLAS</span></div><p>Independent venue guide. Re-check official event information before travel.</p><p>© 2026 Finals Atlas</p></footer></main>;
+}
