@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://finalistanbul.com/sitemap.xml",
+    sitemap: "https://finalsatlas.com/sitemap.xml",
   };
 }
