@@ -1,47 +1,47 @@
 const events = [
   {
-    eyebrow: "02—06 FEB 2027",
-    title: "Spanish Super Cup",
-    subtitle: "Barcelona · Atlético · Real Sociedad · Real Madrid",
-    venue: "Three stadiums across Istanbul",
-    status: "NEXT",
+    eyebrow: "26 MAY 2027",
+    title: "UEFA Europa League Final",
+    subtitle: "Frankfurt · Germany",
+    venue: "Stadion Frankfurt",
+    status: "FINAL",
   },
   {
     eyebrow: "02 JUN 2027",
     title: "UEFA Conference League Final",
-    subtitle: "The 2026/27 season decider",
+    subtitle: "Istanbul · Türkiye",
     venue: "Beşiktaş Stadium",
     status: "FINAL",
   },
   {
-    eyebrow: "24—26 SEP 2027",
-    title: "Turkish Grand Prix",
-    subtitle: "Formula 1 returns to Istanbul",
-    venue: "Istanbul Park",
-    status: "RACE",
+    eyebrow: "05 JUN 2027",
+    title: "UEFA Champions League Final",
+    subtitle: "Madrid · Spain",
+    venue: "Estadio Metropolitano",
+    status: "FINAL",
   },
 ];
 
 const guides = [
   {
     number: "01",
-    title: "EVENTS",
-    text: "Dates, venues, official sources and the practical details you need before you travel.",
+    title: "FINALS",
+    text: "Confirmed dates, host cities, venues and official-source updates for major finals worldwide.",
   },
   {
     number: "02",
-    title: "STADIUMS",
-    text: "Arrival routes, gates, transport options and neighborhood orientation for matchday.",
+    title: "CITIES",
+    text: "Destination guides built around the event: neighborhoods, local transport and what to do before and after.",
   },
   {
     number: "03",
-    title: "STAY",
-    text: "Where to stay based on your venue, airport, nightlife plans and time in the city.",
+    title: "STADIUMS",
+    text: "Venue orientation, arrival routes, matchday logistics and practical planning for visiting supporters.",
   },
   {
     number: "04",
-    title: "ISTANBUL",
-    text: "Make a trip of it: neighborhoods, food, Bosphorus experiences and essential city tips.",
+    title: "TRAVEL",
+    text: "Where to stay, airport options, transfers and useful planning information for a finals trip.",
   },
 ];
 
@@ -55,10 +55,10 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Final Istanbul",
-    url: "https://finalistanbul.com",
+    name: "Finals Atlas",
+    url: "https://finalsatlas.com",
     description:
-      "Independent travel and matchday guide to Istanbul's biggest sporting events.",
+      "A global travel guide to major sports finals, host cities and stadiums.",
     inLanguage: "en",
   };
 
@@ -70,14 +70,14 @@ export default function Home() {
       />
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Final Istanbul home">
-          <span>FINAL</span>
-          <span>ISTANBUL</span>
+        <a className="brand" href="#top" aria-label="Finals Atlas home">
+          <span>FINALS</span>
+          <span>ATLAS</span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#events">Events</a>
+          <a href="#events">Finals</a>
+          <a href="#cities">Cities</a>
           <a href="#guide">Guide</a>
-          <a href="#istanbul">Istanbul</a>
         </nav>
         <a className="header-cta" href="#events">
           Explore 2027
@@ -87,36 +87,36 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-noise" />
         <div className="hero-topline">
-          <span>INDEPENDENT EVENT & TRAVEL GUIDE</span>
-          <span>ISTANBUL · TÜRKİYE</span>
+          <span>GLOBAL FINALS & TRAVEL GUIDE</span>
+          <span>WORLDWIDE · EST. 2026</span>
         </div>
 
         <div className="hero-copy">
-          <p className="kicker">FINAL / ISTANBUL</p>
+          <p className="kicker">FINALS / WORLDWIDE</p>
           <h1>
-            THE BIGGEST EVENTS.
+            FOLLOW THE FINAL.
             <br />
-            <span>ONE EXTRAORDINARY CITY.</span>
+            <span>DISCOVER THE CITY.</span>
           </h1>
           <p className="hero-description">
-            Your independent guide to Istanbul&apos;s biggest sporting events —
-            from matchday logistics and stadiums to hotels, transport and the
-            city beyond the final whistle.
+            A global travel guide built around major sports finals — dates,
+            host cities and stadiums, plus where to stay, how to get there and
+            what to do once you arrive.
           </p>
           <div className="hero-actions">
             <a className="button-primary" href="#events">
-              See upcoming events
+              Explore the finals
             </a>
             <a className="button-secondary" href="#guide">
-              Plan your trip
+              Plan the trip
             </a>
           </div>
         </div>
 
         <div className="next-event-strip">
           <div>
-            <span className="label">NEXT IN ISTANBUL</span>
-            <strong>SPANISH SUPER CUP 2027</strong>
+            <span className="label">NEXT DESTINATION</span>
+            <strong>ISTANBUL · SPANISH SUPER CUP 2027</strong>
           </div>
           <div className="next-event-meta">
             <span>02—06 FEB 2027</span>
@@ -128,11 +128,12 @@ export default function Home() {
 
       <section className="events-section" id="events">
         <div className="section-heading">
-          <p className="kicker">2027 / CALENDAR</p>
-          <h2>COMING TO ISTANBUL</h2>
+          <p className="kicker">2027 / FINALS CALENDAR</p>
+          <h2>FINALS ON THE MAP</h2>
           <p>
-            Major confirmed events worth planning a trip around. Information is
-            checked against official organizer sources.
+            Confirmed host cities and venues worth building a trip around.
+            Finals Atlas uses official organizer information as the starting
+            point for every event guide.
           </p>
         </div>
 
@@ -159,7 +160,7 @@ export default function Home() {
 
       <section className="spotlight">
         <div className="spotlight-title">
-          <p className="kicker">FIRST SPOTLIGHT</p>
+          <p className="kicker">FIRST DESTINATION</p>
           <h2>
             SPANISH
             <br />
@@ -172,7 +173,7 @@ export default function Home() {
         <div className="spotlight-content">
           <p className="spotlight-lede">
             Four Spanish clubs. Three Istanbul stadiums. One week built for
-            football and the city around it.
+            football — and a city worth staying for.
           </p>
           <div className="fixtures">
             {spanishSuperCup.map(([date, match, meta]) => (
@@ -192,8 +193,8 @@ export default function Home() {
 
       <section className="guide-section" id="guide">
         <div className="section-heading dark">
-          <p className="kicker">THE FINAL GUIDE</p>
-          <h2>FROM LANDING TO KICK-OFF.</h2>
+          <p className="kicker">THE ATLAS</p>
+          <h2>FROM HOST CITY TO FINAL WHISTLE.</h2>
         </div>
         <div className="guide-grid">
           {guides.map((guide) => (
@@ -206,34 +207,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="istanbul-section" id="istanbul">
+      <section className="istanbul-section" id="cities">
         <div className="istanbul-wordmark" aria-hidden="true">
           ISTANBUL
         </div>
         <div className="istanbul-copy">
-          <p className="kicker">MAKE A TRIP OF IT</p>
-          <h2>THE FINAL IS ONLY THE BEGINNING.</h2>
+          <p className="kicker">LAUNCH CITY / 01</p>
+          <h2>STARTING IN ISTANBUL. BUILT FOR THE WORLD.</h2>
           <p>
-            Stay for the Bosphorus, neighborhood restaurants, historic streets
-            and the energy of a city split across two continents. Final Istanbul
-            will connect event travel with a concise, useful city guide.
+            Finals Atlas starts with Istanbul as its first deep city hub, then
+            expands final by final into Madrid, Frankfurt, Warsaw and beyond.
+            Each city guide connects the event to the trip around it.
           </p>
           <a className="text-link" href="#top">
-            Final Istanbul guide — coming soon <span>→</span>
+            Istanbul city hub — coming soon <span>→</span>
           </a>
         </div>
       </section>
 
       <footer>
         <div className="brand footer-brand">
-          <span>FINAL</span>
-          <span>ISTANBUL</span>
+          <span>FINALS</span>
+          <span>ATLAS</span>
         </div>
         <p>
-          Independent guide. Final Istanbul is not affiliated with UEFA, RFEF,
-          Formula 1, participating clubs or venue operators.
+          Independent guide. Finals Atlas is not affiliated with UEFA, RFEF,
+          Formula 1, participating clubs, federations or venue operators.
         </p>
-        <p>© 2026 Final Istanbul</p>
+        <p>© 2026 Finals Atlas</p>
       </footer>
     </main>
   );
