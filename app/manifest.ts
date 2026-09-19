@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Final Istanbul",
-    short_name: "Final Istanbul",
-    description: "Independent guide to Istanbul's biggest events.",
+    name: "Finals Atlas",
+    short_name: "Finals Atlas",
+    description: "A global travel guide to major sports finals and host cities.",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0a",
