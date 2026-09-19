@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const events = [
   {
     eyebrow: "26 MAY 2027",
@@ -5,6 +7,7 @@ const events = [
     subtitle: "Frankfurt · Germany",
     venue: "Stadion Frankfurt",
     status: "FINAL",
+    href: "/cities/frankfurt",
   },
   {
     eyebrow: "02 JUN 2027",
@@ -12,6 +15,7 @@ const events = [
     subtitle: "Istanbul · Türkiye",
     venue: "Beşiktaş Stadium",
     status: "FINAL",
+    href: "/cities/istanbul",
   },
   {
     eyebrow: "05 JUN 2027",
@@ -19,6 +23,7 @@ const events = [
     subtitle: "Madrid · Spain",
     venue: "Estadio Metropolitano",
     status: "FINAL",
+    href: "/cities/madrid",
   },
 ];
 
@@ -70,18 +75,19 @@ export default function Home() {
       />
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Finals Atlas home">
+        <Link className="brand" href="/" aria-label="Finals Atlas home">
           <span>FINALS</span>
           <span>ATLAS</span>
-        </a>
+        </Link>
         <nav aria-label="Primary navigation">
-          <a href="#events">Finals</a>
-          <a href="#cities">Cities</a>
-          <a href="#guide">Guide</a>
+          <Link href="/finals">Finals</Link>
+          <Link href="/cities/istanbul">Istanbul</Link>
+          <Link href="/cities/madrid">Madrid</Link>
+          <Link href="/cities/frankfurt">Frankfurt</Link>
         </nav>
-        <a className="header-cta" href="#events">
+        <Link className="header-cta" href="/finals">
           Explore 2027
-        </a>
+        </Link>
       </header>
 
       <section className="hero" id="top">
@@ -104,16 +110,16 @@ export default function Home() {
             what to do once you arrive.
           </p>
           <div className="hero-actions">
-            <a className="button-primary" href="#events">
+            <Link className="button-primary" href="/finals">
               Explore the finals
-            </a>
-            <a className="button-secondary" href="#guide">
-              Plan the trip
-            </a>
+            </Link>
+            <Link className="button-secondary" href="/cities/istanbul">
+              Start with Istanbul
+            </Link>
           </div>
         </div>
 
-        <div className="next-event-strip">
+        <Link className="next-event-strip" href="/cities/istanbul">
           <div>
             <span className="label">NEXT DESTINATION</span>
             <strong>ISTANBUL · SPANISH SUPER CUP 2027</strong>
@@ -123,7 +129,7 @@ export default function Home() {
             <span>3 STADIUMS</span>
             <span>4 CLUBS</span>
           </div>
-        </div>
+        </Link>
       </section>
 
       <section className="events-section" id="events">
@@ -139,7 +145,7 @@ export default function Home() {
 
         <div className="event-grid">
           {events.map((event, index) => (
-            <article className="event-card" key={event.title}>
+            <Link className="event-card" href={event.href} key={event.title}>
               <div className="event-card-top">
                 <span>{event.status}</span>
                 <span>0{index + 1}</span>
@@ -153,9 +159,13 @@ export default function Home() {
                 <span>{event.venue}</span>
                 <span aria-hidden="true">↗</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
+
+        <Link className="text-link home-more-link" href="/finals">
+          View full 2027 finals calendar <span>→</span>
+        </Link>
       </section>
 
       <section className="spotlight">
@@ -184,6 +194,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <Link className="text-link spotlight-link" href="/cities/istanbul">
+            Open Istanbul guide <span>→</span>
+          </Link>
           <p className="source-note">
             Schedule shown in Istanbul local time. Always confirm ticketing and
             last-minute event details with the official organizer before travel.
@@ -216,12 +229,12 @@ export default function Home() {
           <h2>STARTING IN ISTANBUL. BUILT FOR THE WORLD.</h2>
           <p>
             Finals Atlas starts with Istanbul as its first deep city hub, then
-            expands final by final into Madrid, Frankfurt, Warsaw and beyond.
-            Each city guide connects the event to the trip around it.
+            expands final by final into Madrid, Frankfurt and beyond. Each city
+            guide connects the event to the trip around it.
           </p>
-          <a className="text-link" href="#top">
-            Istanbul city hub — coming soon <span>→</span>
-          </a>
+          <Link className="text-link" href="/cities/istanbul">
+            Open Istanbul city hub <span>→</span>
+          </Link>
         </div>
       </section>
 
