@@ -1,6 +1,6 @@
-# Final Istanbul
+# Finals Atlas
 
-Independent event and travel guide for Istanbul's biggest sporting events.
+A global travel guide built around major sports finals, host cities and stadiums.
 
 ## Stack
 
@@ -20,8 +20,8 @@ Open http://localhost:3000.
 
 ## Production
 
-This repository is intended to deploy on Vercel and serve `finalistanbul.com`.
+This repository deploys on Vercel and serves `finalsatlas.com`.
 
 ## Editorial principle
 
-Final Istanbul is an independent guide and must not imply official affiliation with event organizers, clubs, federations or venues. Ticketing guidance should prioritize official sources.
+Finals Atlas is an independent guide and must not imply official affiliation with event organizers, clubs, federations or venues. Event details should be checked against primary organizer sources, and ticketing guidance should prioritize official channels.
