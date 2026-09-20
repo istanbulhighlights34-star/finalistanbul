@@ -31,7 +31,7 @@ export default function MadridPage() {
 
       <section className="page-hero city-hero">
         <p className="kicker">CITY 02 / SPAIN</p>
-        <h1>MADRID<br /><span>05 JUN 2027.</span></h1>
+        <h1>MADRID<br /><span>05 JUN 2027</span></h1>
         <p className="page-lede">
           The 2026/27 UEFA Champions League season ends at Estadio Metropolitano.
           Finals Atlas is building the travel layer around the biggest club final
