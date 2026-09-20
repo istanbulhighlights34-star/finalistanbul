@@ -100,9 +100,9 @@ export default function Home() {
         <div className="hero-copy">
           <p className="kicker">FINALS / WORLDWIDE</p>
           <h1>
-            FOLLOW THE FINAL.
+            FOLLOW THE FINAL
             <br />
-            <span>DISCOVER THE CITY.</span>
+            <span>DISCOVER THE CITY</span>
           </h1>
           <p className="hero-description">
             A global travel guide built around major sports finals — dates,
