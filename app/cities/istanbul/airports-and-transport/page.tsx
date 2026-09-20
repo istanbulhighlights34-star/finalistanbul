@@ -13,7 +13,7 @@ export default function Page() {
     <TravelGuide
       kicker="ISTANBUL / AIRPORTS & TRANSPORT"
       title="MOVE THROUGH"
-      accent="ISTANBUL."
+      accent="ISTANBUL"
       lede="Two airports, two continents and multiple stadiums mean the best route depends on your match, hotel base and arrival side of the city."
       facts={[
         ["IST", "Istanbul Airport"],
@@ -21,7 +21,7 @@ export default function Page() {
         ["M2", "Seyrantepe corridor"],
         ["M4", "SAW–Kadıköy corridor"],
       ]}
-      introTitle="PLAN THE CORRIDOR BEFORE THE MATCHDAY."
+      introTitle="PLAN THE CORRIDOR BEFORE THE MATCHDAY"
       paragraphs={[
         "Sabiha Gökçen Airport is directly connected to the M4 metro line, which runs toward Kadıköy and links with Marmaray at Ayrılık Çeşmesi. This can be especially practical for visitors attending the Spanish Super Cup semi-final at Chobani Stadium.",
         "Metro Istanbul lists the M2 as the Yenikapı–Seyrantepe–Hacıosman line, making Seyrantepe the key rail corridor for RAMS Park. Taksim and Kabataş are connected by the F1 funicular, which is useful for visitors staying centrally and moving toward the Beşiktaş waterfront area.",
