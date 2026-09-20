@@ -31,11 +31,7 @@ export default function MadridPage() {
 
       <section className="page-hero city-hero">
         <p className="kicker">CITY 02 / SPAIN</p>
-        <h1>
-          MADRID
-          <br />
-          <span>05 JUN 2027.</span>
-        </h1>
+        <h1>MADRID<br /><span>05 JUN 2027.</span></h1>
         <p className="page-lede">
           The 2026/27 UEFA Champions League season ends at Estadio Metropolitano.
           Finals Atlas is building the travel layer around the biggest club final
@@ -77,25 +73,19 @@ export default function MadridPage() {
         </div>
         <div className="zone-grid">
           {zones.map(([name, text], i) => (
-            <article key={name}>
-              <span>0{i + 1}</span>
-              <h3>{name}</h3>
-              <p>{text}</p>
-            </article>
+            <article key={name}><span>0{i + 1}</span><h3>{name}</h3><p>{text}</p></article>
           ))}
         </div>
       </section>
 
       <section className="planning-section">
-        <p className="kicker">GUIDE ROADMAP</p>
+        <p className="kicker">TRAVEL GUIDES</p>
         <h2>MADRID FINAL WEEKEND.</h2>
         <div className="planning-grid">
-          <span>Metropolitano transport</span>
-          <span>Best areas to stay</span>
-          <span>Airport to center</span>
-          <span>Official ticket links</span>
-          <span>Pre-match areas</span>
-          <span>48-hour Madrid plan</span>
+          <Link href="/cities/madrid/where-to-stay"><span>Where to stay →</span></Link>
+          <Link href="/cities/madrid/airport-to-estadio-metropolitano"><span>Airport to Metropolitano →</span></Link>
+          <Link href="/finals/champions-league-final-madrid-2027"><span>Champions League Final →</span></Link>
+          <Link href="/stadiums/estadio-metropolitano"><span>Metropolitano guide →</span></Link>
         </div>
       </section>
 
