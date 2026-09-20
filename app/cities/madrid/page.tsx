@@ -50,7 +50,7 @@ export default function MadridPage() {
       </section>
 
       <section className="detail-section">
-        <div className="detail-title"><p className="kicker">THE FINAL</p><h2>ONE NIGHT. BUILD THE WEEKEND AROUND IT.</h2></div>
+        <div className="detail-title"><p className="kicker">THE FINAL</p><h2>ONE NIGHT BUILD THE WEEKEND AROUND IT</h2></div>
         <div className="prose-column">
           <p>Estadio Metropolitano will stage the 2027 Champions League final on Saturday 5 June. The stadium previously hosted the 2019 final, making this a familiar major-event venue with a very different location from Madrid's historic center.</p>
           <p>The practical decision is not simply “closest hotel to the stadium.” For most visitors the better question is how much of Madrid you want around the final, then how you plan the matchday journey east.</p>
@@ -58,12 +58,12 @@ export default function MadridPage() {
       </section>
 
       <section className="paper-section">
-        <div className="section-heading"><p className="kicker">WHERE TO STAY</p><h2>FOUR WAYS TO DO MADRID.</h2></div>
+        <div className="section-heading"><p className="kicker">WHERE TO STAY</p><h2>FOUR WAYS TO DO MADRID</h2></div>
         <div className="zone-grid">{zones.map(([name,text],i)=><article key={name}><span>0{i+1}</span><h3>{name}</h3><p>{text}</p></article>)}</div>
       </section>
 
       <section className="planning-section">
-        <p className="kicker">TRAVEL GUIDES</p><h2>MADRID FINAL WEEKEND.</h2>
+        <p className="kicker">TRAVEL GUIDES</p><h2>MADRID FINAL WEEKEND</h2>
         <div className="planning-grid">
           <Link href="/cities/madrid/champions-league-final-weekend"><span>3-day final weekend plan →</span></Link>
           <Link href="/cities/madrid/where-to-stay"><span>Where to stay →</span></Link>
