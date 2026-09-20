@@ -13,7 +13,7 @@ const events = [
     date: "02 FEB 2027",
     title: "Barcelona — Atlético Madrid",
     meta: "Spanish Super Cup semi-final · 22:00 local",
-    venue: "Fenerbahçe Şükrü Saracoğlu",
+    venue: "Chobani Stadium",
   },
   {
     date: "03 FEB 2027",
@@ -31,7 +31,7 @@ const events = [
     date: "02 JUN 2027",
     title: "UEFA Conference League Final",
     meta: "2026/27 season final",
-    venue: "Beşiktaş Stadium",
+    venue: "Tüpraş Stadium",
   },
 ];
 
@@ -39,7 +39,7 @@ const zones = [
   ["BEŞİKTAŞ", "Best positioned for the Conference League final venue and Bosphorus-side matchday atmosphere."],
   ["TAKSİM", "Central base with broad transport links and easy access to Beşiktaş, Karaköy and the historic peninsula."],
   ["KARAKÖY", "A compact waterfront base for food, Galata and ferry connections across the city."],
-  ["KADIKÖY", "Asian-side base close to Fenerbahçe's stadium and a strong food-and-nightlife district in its own right."],
+  ["KADIKÖY", "Asian-side base close to Chobani Stadium and a strong food-and-nightlife district in its own right."],
 ];
 
 export default function IstanbulPage() {
