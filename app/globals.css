@@ -1427,3 +1427,98 @@ footer p:last-child {
     min-height: 280px;
   }
 }
+
+
+.event-card-logo {
+  width: 118px;
+  height: 72px;
+  object-fit: contain;
+  object-position: left center;
+  margin: 0 0 28px;
+  filter: grayscale(1);
+  opacity: .82;
+  transition: filter 180ms ease, opacity 180ms ease;
+}
+
+.event-card:hover .event-card-logo {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.home-stadium-feature {
+  position: relative;
+  overflow: hidden;
+  margin: 42px 0 0;
+  aspect-ratio: 16 / 8;
+  background: #181818;
+}
+
+.home-stadium-feature img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.home-stadium-feature figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  margin: 0;
+  padding: 6px 8px;
+  background: rgba(0,0,0,.72);
+  color: rgba(255,255,255,.72);
+  font-size: 8px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.calendar-visual {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 0;
+}
+
+.calendar-visual img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  object-position: left bottom;
+  filter: grayscale(1);
+  opacity: .65;
+}
+
+.calendar-row:hover .calendar-visual img {
+  filter: grayscale(0);
+  opacity: 1;
+  background: white;
+  padding: 5px;
+}
+
+@media (max-width: 900px) {
+  .event-card-logo {
+    width: 105px;
+    height: 62px;
+  }
+
+  .calendar-visual {
+    padding: 24px 0;
+  }
+
+  .calendar-visual img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 560px) {
+  .calendar-visual {
+    display: none;
+  }
+
+  .home-stadium-feature {
+    aspect-ratio: 4 / 3;
+  }
+}
