@@ -50,7 +50,7 @@ export default function FrankfurtPage() {
       </section>
 
       <section className="detail-section">
-        <div className="detail-title"><p className="kicker">THE FINAL</p><h2>A SHORT-TRIP CITY WITH A BIG-EVENT STADIUM.</h2></div>
+        <div className="detail-title"><p className="kicker">THE FINAL</p><h2>A SHORT-TRIP CITY WITH A BIG-EVENT STADIUM</h2></div>
         <div className="prose-column">
           <p>The 2027 Europa League final is set for Wednesday 26 May at Stadion Frankfurt. The venue was used during UEFA EURO 2024 and has a long record of hosting international tournament football.</p>
           <p>Frankfurt's airport, central station and relatively compact center make it particularly suitable for a two- or three-night final trip. Our guide focuses on efficient arrival, hotel location and the stadium journey.</p>
@@ -58,12 +58,12 @@ export default function FrankfurtPage() {
       </section>
 
       <section className="paper-section">
-        <div className="section-heading"><p className="kicker">WHERE TO STAY</p><h2>PICK FOR CONNECTIONS, NOT JUST DISTANCE.</h2></div>
+        <div className="section-heading"><p className="kicker">WHERE TO STAY</p><h2>PICK FOR CONNECTIONS, NOT JUST DISTANCE</h2></div>
         <div className="zone-grid">{zones.map(([name,text],i)=><article key={name}><span>0{i+1}</span><h3>{name}</h3><p>{text}</p></article>)}</div>
       </section>
 
       <section className="planning-section">
-        <p className="kicker">TRAVEL GUIDES</p><h2>FRANKFURT FINAL WEEK.</h2>
+        <p className="kicker">TRAVEL GUIDES</p><h2>FRANKFURT FINAL WEEK</h2>
         <div className="planning-grid">
           <Link href="/cities/frankfurt/europa-league-final-trip"><span>2–3 night final trip →</span></Link>
           <Link href="/cities/frankfurt/where-to-stay"><span>Where to stay →</span></Link>
