@@ -3,6 +3,8 @@ import Link from "next/link";
 type Fact = [string, string];
 type Item = [string, string];
 
+const cleanHero = (value: string) => value.replace(/[.]+$/, "");
+
 export default function EventGuide({
   kicker,
   title,
@@ -51,9 +53,9 @@ export default function EventGuide({
       <section className="page-hero city-hero">
         <p className="kicker">{kicker}</p>
         <h1>
-          {title}
+          {cleanHero(title)}
           <br />
-          <span>{accent}</span>
+          <span>{cleanHero(accent)}</span>
         </h1>
         <p className="page-lede">{lede}</p>
       </section>
