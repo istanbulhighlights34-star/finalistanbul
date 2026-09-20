@@ -18,6 +18,7 @@ export default function TravelGuide({
   relatedLinks,
   sourceLinks = [],
   note,
+  competitionLogo,
 }: {
   kicker: string;
   title: string;
@@ -31,6 +32,7 @@ export default function TravelGuide({
   relatedLinks: { href: string; label: string }[];
   sourceLinks?: { href: string; label: string }[];
   note?: string;
+  competitionLogo?: { src: string; alt: string; label: string };
 }) {
   return (
     <main className="content-page">
@@ -59,6 +61,18 @@ export default function TravelGuide({
         </h1>
         <p className="page-lede">{lede}</p>
       </section>
+
+      {competitionLogo && (
+        <section className="travel-competition-strip" aria-label={competitionLogo.label}>
+          <div className="travel-competition-logo">
+            <img src={competitionLogo.src} alt={competitionLogo.alt} loading="eager" />
+          </div>
+          <div>
+            <span>EVENT IDENTITY</span>
+            <strong>{competitionLogo.label}</strong>
+          </div>
+        </section>
+      )}
 
       <section className="city-facts">
         {facts.map(([a, b]) => (
