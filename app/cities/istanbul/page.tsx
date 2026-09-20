@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 const events = [
   {
     date: "02 FEB 2027",
-    title: "Barcelona — Atlético Madrid",
+    home: "Barcelona",
+    away: "Atlético Madrid",
     meta: "Spanish Super Cup semi-final · 22:00 local",
     venue: "Chobani Stadium",
     competitionLogo: "https://commons.wikimedia.org/wiki/Special:FilePath/Supercopa%20Espa%C3%B1a%20Logotipo.png",
@@ -20,7 +21,8 @@ const events = [
   },
   {
     date: "03 FEB 2027",
-    title: "Real Sociedad — Real Madrid",
+    home: "Real Sociedad",
+    away: "Real Madrid",
     meta: "Spanish Super Cup semi-final · 22:00 local",
     venue: "Tüpraş Stadium",
     competitionLogo: "https://commons.wikimedia.org/wiki/Special:FilePath/Supercopa%20Espa%C3%B1a%20Logotipo.png",
@@ -106,26 +108,40 @@ export default function IstanbulPage() {
       <section className="detail-section">
         <div className="detail-title">
           <p className="kicker">CONFIRMED EVENTS</p>
-          <h2>WHY ISTANBUL IN 2027.</h2>
+          <h2>WHY ISTANBUL IN 2027</h2>
         </div>
         <div className="detail-list">
           {events.map((event) => (
-            <article className="detail-row detail-row-with-logos" key={event.title}>
+            <article className="detail-row detail-row-with-logos" key={event.date + (event.title || event.home)}>
               <div className="event-date-logo">
                 <span>{event.date}</span>
                 <img src={event.competitionLogo} alt="" aria-hidden="true" loading="lazy" />
               </div>
-              <div>
-                {(event.homeLogo || event.awayLogo) && (
-                  <div className="fixture-crests" aria-hidden="true">
-                    {event.homeLogo && <img src={event.homeLogo} alt="" loading="lazy" />}
-                    <span>×</span>
-                    {event.awayLogo && <img src={event.awayLogo} alt="" loading="lazy" />}
-                  </div>
+
+              <div className="event-title-block">
+                {event.home && event.away ? (
+                  <>
+                    <div className="fixture-match-line">
+                      <h3>{event.home}</h3>
+                      <div className="fixture-center">
+                        <div className="fixture-crests" aria-hidden="true">
+                          <img src={event.homeLogo} alt="" loading="lazy" />
+                          <img src={event.awayLogo} alt="" loading="lazy" />
+                        </div>
+                        <span className="fixture-dash">—</span>
+                      </div>
+                      <h3>{event.away}</h3>
+                    </div>
+                    <p>{event.meta}</p>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="event-final-title">{event.title}</h3>
+                    <p>{event.meta}</p>
+                  </>
                 )}
-                <h3>{event.title}</h3>
-                <p>{event.meta}</p>
               </div>
+
               <strong>{event.venue}</strong>
             </article>
           ))}
@@ -135,7 +151,7 @@ export default function IstanbulPage() {
       <section className="paper-section">
         <div className="section-heading">
           <p className="kicker">WHERE TO BASE YOURSELF</p>
-          <h2>CHOOSE THE CITY BEFORE THE HOTEL.</h2>
+          <h2>CHOOSE THE CITY BEFORE THE HOTEL</h2>
           <p>
             Istanbul is large and water divides the city. Pick your neighborhood around the stadium,
             the side of the city you want to explore and how much time you have outside the event.
@@ -148,7 +164,7 @@ export default function IstanbulPage() {
 
       <section className="planning-section">
         <p className="kicker">TRAVEL GUIDES</p>
-        <h2>PLAN ISTANBUL BEFORE MATCHDAY.</h2>
+        <h2>PLAN ISTANBUL BEFORE MATCHDAY</h2>
         <div className="planning-grid">
           <Link href="/cities/istanbul/spanish-super-cup-week"><span>5-day Super Cup plan →</span></Link>
           <Link href="/cities/istanbul/conference-league-final-weekend"><span>Conference final weekend →</span></Link>
