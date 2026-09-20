@@ -61,11 +61,7 @@ export default function IstanbulPage() {
 
       <section className="page-hero city-hero">
         <p className="kicker">CITY 01 / TÜRKİYE</p>
-        <h1>
-          ISTANBUL
-          <br />
-          <span>2027.</span>
-        </h1>
+        <h1>ISTANBUL<br /><span>2027.</span></h1>
         <p className="page-lede">
           Four Spanish clubs in February. A UEFA final in June. Three major
           football venues, two continents and one of the strongest launch cities
@@ -89,10 +85,7 @@ export default function IstanbulPage() {
           {events.map((event) => (
             <article className="detail-row" key={event.title}>
               <span>{event.date}</span>
-              <div>
-                <h3>{event.title}</h3>
-                <p>{event.meta}</p>
-              </div>
+              <div><h3>{event.title}</h3><p>{event.meta}</p></div>
               <strong>{event.venue}</strong>
             </article>
           ))}
@@ -111,25 +104,21 @@ export default function IstanbulPage() {
         </div>
         <div className="zone-grid">
           {zones.map(([name, text], i) => (
-            <article key={name}>
-              <span>0{i + 1}</span>
-              <h3>{name}</h3>
-              <p>{text}</p>
-            </article>
+            <article key={name}><span>0{i + 1}</span><h3>{name}</h3><p>{text}</p></article>
           ))}
         </div>
       </section>
 
       <section className="planning-section">
-        <p className="kicker">NEXT UP</p>
-        <h2>THE ISTANBUL GUIDE WE'RE BUILDING.</h2>
+        <p className="kicker">TRAVEL GUIDES</p>
+        <h2>PLAN ISTANBUL BEFORE MATCHDAY.</h2>
         <div className="planning-grid">
-          <span>Stadium transport</span>
-          <span>Airport strategy</span>
-          <span>Hotels by venue</span>
-          <span>Official ticket links</span>
-          <span>Fan zones</span>
-          <span>48-hour city plan</span>
+          <Link href="/cities/istanbul/where-to-stay"><span>Where to stay →</span></Link>
+          <Link href="/cities/istanbul/airports-and-transport"><span>Airports & transport →</span></Link>
+          <Link href="/finals/spanish-super-cup-istanbul-2027"><span>Spanish Super Cup 2027 →</span></Link>
+          <Link href="/finals/conference-league-final-istanbul-2027"><span>Conference League Final →</span></Link>
+          <Link href="/stadiums/tupras-stadium"><span>Beşiktaş stadium →</span></Link>
+          <Link href="/stadiums/rams-park"><span>RAMS Park →</span></Link>
         </div>
         <p className="source-note">
           Supporter routing, ticket sales and fan-zone details will be added only
