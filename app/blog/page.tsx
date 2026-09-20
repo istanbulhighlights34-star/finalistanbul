@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { articles } from "./articles";
+import styles from "./blog.module.css";
+
+export const metadata:Metadata={title:"Finals Travel Journal | Finals Atlas",description:"Evergreen travel planning for major football finals: matchday transport, where to stay and practical final-week strategy for Istanbul, Madrid and Frankfurt.",alternates:{canonical:"https://finalsatlas.com/blog"}};
+
+export default function Blog(){return <main className={styles.shell}><header className={styles.header}><Link className={styles.brand} href="/"><span>FINALS</span><span>ATLAS</span></Link><nav className={styles.nav}><Link href="/finals">Finals</Link><Link href="/cities/istanbul">Istanbul</Link><Link href="/cities/madrid">Madrid</Link><Link href="/cities/frankfurt">Frankfurt</Link><Link href="/blog">Blog</Link></nav><Link className={styles.cta} href="/finals">2027 Calendar</Link></header><section className={styles.hero}><p className={styles.kicker}>FINALS ATLAS / JOURNAL</p><h1>TRAVEL SMARTER FOR THE FINAL</h1><p>Field notes and evergreen planning guides for the days around the match — built to complement our city, stadium and transport guides without turning unconfirmed event details into facts.</p></section><section className={styles.grid}>{articles.map(a=><Link className={styles.card} href={`/blog/${a.slug}`} key={a.slug}><div className={styles.meta}><span>{a.city}</span><span>{a.read}</span></div><h2>{a.title}</h2><p>{a.dek}</p></Link>)}</section><footer className={styles.footer}><div className={styles.brand}><span>FINALS</span><span>ATLAS</span></div><p>Independent editorial guide for supporters building a trip around the final.</p><p>© 2026 Finals Atlas</p></footer></main>}
