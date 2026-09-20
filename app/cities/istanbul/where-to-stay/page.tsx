@@ -13,7 +13,7 @@ export default function Page() {
     <TravelGuide
       kicker="ISTANBUL / WHERE TO STAY"
       title="WHERE TO STAY"
-      accent="ISTANBUL 2027."
+      accent="ISTANBUL 2027"
       lede="Choose the neighborhood around the event you are attending — not simply the hotel with the shortest straight-line distance to a stadium."
       facts={[
         ["BEŞİKTAŞ", "Conference League base"],
@@ -21,7 +21,7 @@ export default function Page() {
         ["TAKSİM", "Central connection point"],
         ["KARAKÖY", "Waterfront city base"],
       ]}
-      introTitle="ONE CITY. VERY DIFFERENT MATCHDAY BASES."
+      introTitle="ONE CITY VERY DIFFERENT MATCHDAY BASES"
       paragraphs={[
         "Istanbul's 2027 football calendar is spread across both sides of the Bosphorus. The Spanish Super Cup uses Chobani Stadium, Tüpraş Stadium and RAMS Park, while the UEFA Conference League final is at Tüpraş Stadium. That makes neighborhood choice a transport decision as much as a hotel decision.",
         "For a single match, staying on the same side of the city can simplify the day. For a multi-match trip, a central base with good rail or ferry connections can be more useful than being next to only one venue.",
