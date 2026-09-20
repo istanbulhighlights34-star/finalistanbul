@@ -156,7 +156,7 @@ export default function Home() {
               <div className="event-card-body">
                 <img className="event-card-logo" src={event.logo} alt="" aria-hidden="true" loading="lazy" />
                 <p>{event.eyebrow}</p>
-                <h3>{eventtitle}</h3>
+                <h3>{event.title}</h3>
                 <p className="event-subtitle">{event.subtitle}</p>
               </div>
               <div className="event-card-footer">
@@ -221,7 +221,7 @@ export default function Home() {
           {guides.map((guide) => (
             <article key={guide.number}>
               <span>{guide.number}</span>
-              <h3>{guidetitle}</h3>
+              <h3>{guide.title}</h3>
               <p>{guide.text}</p>
             </article>
           ))}
