@@ -16,7 +16,7 @@ const paths = [
   "/cities/madrid/airport-to-estadio-metropolitano",
   "/cities/frankfurt/where-to-stay",
   "/cities/frankfurt/airport-to-stadion-frankfurt",
-  "/stadiums/fenerbahce-sukru-saracoglu",
+  "/stadiums/chobani-stadium",
   "/stadiums/tupras-stadium",
   "/stadiums/rams-park",
   "/stadiums/estadio-metropolitano",
