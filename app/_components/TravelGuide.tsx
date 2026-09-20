@@ -98,7 +98,7 @@ export default function TravelGuide({
       <section className="paper-section">
         <div className="section-heading">
           <p className="kicker">COMPARE YOUR OPTIONS</p>
-          <h2>MAKE THE LOCATION WORK FOR THE TRIP.</h2>
+          <h2>MAKE THE LOCATION WORK FOR THE TRIP</h2>
         </div>
         <div className="zone-grid">
           {cards.map(([name, text], index) => (
@@ -113,7 +113,7 @@ export default function TravelGuide({
 
       <section className="planning-section">
         <p className="kicker">KEEP EXPLORING</p>
-        <h2>BUILD THE TRIP AROUND THE FINAL.</h2>
+        <h2>BUILD THE TRIP AROUND THE FINAL</h2>
         <div className="planning-grid">
           {relatedLinks.map((link) => (
             <Link href={link.href} key={link.href}>
