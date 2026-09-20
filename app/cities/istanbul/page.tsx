@@ -122,7 +122,7 @@ export default function IstanbulPage() {
                 {event.home && event.away ? (
                   <>
                     <div className="fixture-match-line">
-                      <h3>{eventhome}</h3>
+                      <h3>{event.home}</h3>
                       <div className="fixture-center">
                         <div className="fixture-crests" aria-hidden="true">
                           <img src={event.homeLogo} alt="" loading="lazy" />
@@ -130,13 +130,13 @@ export default function IstanbulPage() {
                         </div>
                         <span className="fixture-dash">—</span>
                       </div>
-                      <h3>{eventaway}</h3>
+                      <h3>{event.away}</h3>
                     </div>
                     <p>{event.meta}</p>
                   </>
                 ) : (
                   <>
-                    <h3 className="event-final-title">{eventtitle}</h3>
+                    <h3 className="event-final-title">{event.title}</h3>
                     <p>{event.meta}</p>
                   </>
                 )}
