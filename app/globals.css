@@ -1817,3 +1817,61 @@ footer p:last-child {
     grid-template-columns: 88px 1fr;
   }
 }
+
+
+.travel-competition-strip {
+  display: grid;
+  grid-template-columns: minmax(180px, 320px) 1fr;
+  align-items: center;
+  gap: 30px;
+  min-height: 180px;
+  padding: 28px 42px;
+  background: #101010;
+  border-bottom: 1px solid #292929;
+}
+
+.travel-competition-logo {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: #f3f0e8;
+}
+
+.travel-competition-logo img {
+  width: 100%;
+  max-width: 210px;
+  max-height: 85px;
+  object-fit: contain;
+}
+
+.travel-competition-strip > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.travel-competition-strip > div:last-child > span {
+  color: var(--acid);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.travel-competition-strip > div:last-child > strong {
+  font-size: clamp(22px, 2.4vw, 38px);
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+  .travel-competition-strip {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+
+  .travel-competition-logo {
+    height: 105px;
+  }
+}
