@@ -8,6 +8,7 @@ const events = [
     venue: "Stadion Frankfurt",
     status: "FINAL",
     href: "/cities/frankfurt",
+    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/UEFA%20Europa%20League%20logo%20%282024%20version%29.svg",
   },
   {
     eyebrow: "02 JUN 2027",
@@ -16,6 +17,7 @@ const events = [
     venue: "Tüpraş Stadium",
     status: "FINAL",
     href: "/cities/istanbul",
+    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/UEFA%20Conference%20League%20full%20logo%20%282024%20version%29.svg",
   },
   {
     eyebrow: "05 JUN 2027",
@@ -24,6 +26,7 @@ const events = [
     venue: "Estadio Metropolitano",
     status: "FINAL",
     href: "/cities/madrid",
+    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/UEFA%20Champions%20League%20Logo%20Wordmark.svg",
   },
 ];
 
@@ -151,6 +154,7 @@ export default function Home() {
                 <span>0{index + 1}</span>
               </div>
               <div className="event-card-body">
+                <img className="event-card-logo" src={event.logo} alt="" aria-hidden="true" loading="lazy" />
                 <p>{event.eyebrow}</p>
                 <h3>{event.title}</h3>
                 <p className="event-subtitle">{event.subtitle}</p>
@@ -197,6 +201,10 @@ export default function Home() {
           <Link className="text-link spotlight-link" href="/cities/istanbul">
             Open Istanbul guide <span>→</span>
           </Link>
+          <figure className="home-stadium-feature">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rams%20Park%20i%C3%A7%20g%C3%B6r%C3%BCn%C3%BCm%202025.jpg" alt="RAMS Park in Istanbul" loading="lazy" />
+            <figcaption>RAMS Park · Spanish Super Cup Final venue · Photo: Antoloji / Wikimedia Commons</figcaption>
+          </figure>
           <p className="source-note">
             Schedule shown in Istanbul local time. Always confirm ticketing and
             last-minute event details with the official organizer before travel.
@@ -244,7 +252,7 @@ export default function Home() {
           <span>ATLAS</span>
         </div>
         <p>
-          Independent guide. Finals Atlas is not affiliated with UEFA, RFEF,
+          Independent editorial guide. Event and club marks identify the subjects covered; Finals Atlas is not affiliated with UEFA, RFEF,
           Formula 1, participating clubs, federations or venue operators.
         </p>
         <p>© 2026 Finals Atlas</p>
