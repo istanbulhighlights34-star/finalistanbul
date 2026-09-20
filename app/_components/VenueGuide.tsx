@@ -7,6 +7,12 @@ type VenueImage = {
   creditHref?: string;
 };
 
+type CompetitionLogo = {
+  src: string;
+  alt: string;
+  label: string;
+};
+
 const cleanHero = (value: string) => value.replace(/[.]+$/, "");
 
 export default function VenueGuide({
@@ -19,6 +25,7 @@ export default function VenueGuide({
   paragraphs,
   eventLinks,
   image,
+  competitionLogos = [],
 }: {
   city: string;
   cityHref: string;
@@ -29,6 +36,7 @@ export default function VenueGuide({
   paragraphs: string[];
   eventLinks: { href: string; label: string }[];
   image?: VenueImage;
+  competitionLogos?: CompetitionLogo[];
 }) {
   return (
     <main className="content-page">
@@ -59,13 +67,29 @@ export default function VenueGuide({
         </figure>
       )}
 
+      {competitionLogos.length > 0 && (
+        <section className="venue-competition-strip" aria-label="Competitions at this venue">
+          {competitionLogos.map((competition) => (
+            <div className="venue-competition-mark" key={competition.label}>
+              <img src={competition.src} alt={competition.alt} loading="lazy" />
+              <span>{competition.label}</span>
+            </div>
+          ))}
+        </section>
+      )}
+
       <section className="city-facts">
         {facts.map(([a,b])=><div key={a}><span>{a}</span><strong>{b}</strong></div>)}
       </section>
+
       <section className="detail-section">
-        <div className="detail-title"><p className="kicker">VENUE ORIENTATION</p><h2>KNOW THE GROUND BEFORE MATCHDAY.</h2></div>
+        <div className="detail-title">
+          <p className="kicker">VENUE ORIENTATION</p>
+          <h2>KNOW THE GROUND BEFORE MATCHDAY.</h2>
+        </div>
         <div className="prose-column">{paragraphs.map(p=><p key={p}>{p}</p>)}</div>
       </section>
+
       <section className="planning-section">
         <p className="kicker">2027 EVENTS</p>
         <h2>FINALS AT THIS VENUE.</h2>
@@ -76,9 +100,10 @@ export default function VenueGuide({
         </div>
         <p className="source-note">Event-specific gates, supporter zones and special transport operations are added only after official publication.</p>
       </section>
+
       <footer>
         <div className="brand footer-brand"><span>FINALS</span><span>ATLAS</span></div>
-        <p>Independent venue guide. Re-check official event information before travel.</p>
+        <p>Independent venue guide. Competition marks are used for editorial identification.</p>
         <p>© 2026 Finals Atlas</p>
       </footer>
     </main>
