@@ -13,7 +13,7 @@ export default function Page() {
     <TravelGuide
       kicker="FRANKFURT / WHERE TO STAY"
       title="WHERE TO STAY"
-      accent="FRANKFURT 2027."
+      accent="FRANKFURT 2027"
       lede="Frankfurt is compact enough that the best base is usually about rail connections and the rest of your trip — not sleeping beside the stadium."
       facts={[
         ["INNENSTADT", "City-centre base"],
@@ -21,7 +21,7 @@ export default function Page() {
         ["SACHSENHAUSEN", "South-bank base"],
         ["AIRPORT", "Short-trip base"],
       ]}
-      introTitle="FRANKFURT REWARDS A CONNECTION-FIRST HOTEL."
+      introTitle="FRANKFURT REWARDS A CONNECTION-FIRST HOTEL"
       paragraphs={[
         "Stadion Frankfurt sits south of the centre, while Frankfurt Airport is also connected directly into the regional rail network. This makes the main station and central districts practical for many visitors attending the Europa League final.",
         "If you are arriving by rail from elsewhere in Germany or Europe, staying near Hauptbahnhof can simplify both arrival and matchday. If the final is part of a longer city stay, Innenstadt or Sachsenhausen may give you a better overall base.",
