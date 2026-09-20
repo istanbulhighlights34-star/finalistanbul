@@ -13,7 +13,7 @@ export default function Page() {
     <TravelGuide
       kicker="MADRID / AIRPORT TO STADIUM"
       title="AIRPORT TO"
-      accent="METROPOLITANO."
+      accent="METROPOLITANO"
       lede="Madrid-Barajas and Estadio Metropolitano are both on the eastern side of Madrid, but the best route still depends on your terminal, hotel and final-day operating plan."
       facts={[
         ["LINE 8", "Airport metro"],
@@ -21,7 +21,7 @@ export default function Page() {
         ["T4", "Cercanías access"],
         ["05 JUN", "2027 final"],
       ]}
-      introTitle="BUILD THE ROUTE AROUND YOUR HOTEL, NOT JUST THE MAP."
+      introTitle="BUILD THE ROUTE AROUND YOUR HOTEL, NOT JUST THE MAP"
       paragraphs={[
         "Aena confirms that Madrid-Barajas is served by Metro Line 8 between the airport and Nuevos Ministerios. Terminal 4 also has Cercanías rail service toward central Madrid. The regional transport authority lists Estadio Metropolitano station on Metro Line 7.",
         "For most visitors, the practical route will be airport to hotel first, then hotel to the stadium on matchday. Direct event-day supporter services, crowd-control changes and any special UEFA transport plan for 5 June 2027 are not yet published.",
