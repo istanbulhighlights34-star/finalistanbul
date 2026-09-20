@@ -13,7 +13,7 @@ const events = [
     eyebrow: "02 JUN 2027",
     title: "UEFA Conference League Final",
     subtitle: "Istanbul · Türkiye",
-    venue: "Beşiktaş Stadium",
+    venue: "Tüpraş Stadium",
     status: "FINAL",
     href: "/cities/istanbul",
   },
@@ -51,8 +51,8 @@ const guides = [
 ];
 
 const spanishSuperCup = [
-  ["02 FEB", "Barcelona — Atlético Madrid", "22:00 local · Fenerbahçe"],
-  ["03 FEB", "Real Sociedad — Real Madrid", "22:00 local · Beşiktaş"],
+  ["02 FEB", "Barcelona — Atlético Madrid", "22:00 local · Chobani Stadium"],
+  ["03 FEB", "Real Sociedad — Real Madrid", "22:00 local · Tüpraş Stadium"],
   ["06 FEB", "Spanish Super Cup Final", "22:00 local · RAMS Park"],
 ];
 
