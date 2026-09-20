@@ -122,17 +122,17 @@ export default function IstanbulPage() {
                 {event.home && event.away ? (
                   <>
                     <div className="fixture-match-line">
-                      <h3>{event.home}</h3>
-                      <div className="fixture-center">
-                        <div className="fixture-crests" aria-hidden="true">
-                          <img src={event.homeLogo} alt="" loading="lazy" />
-                          <img src={event.awayLogo} alt="" loading="lazy" />
-                        </div>
-                        <span className="fixture-dash">—</span>
+                      <div className="fixture-team fixture-team-home">
+                        <h3>{event.home}</h3>
+                        <img src={event.homeLogo} alt="" aria-hidden="true" loading="lazy" />
                       </div>
-                      <h3>{event.away}</h3>
+                      <span className="fixture-dash">—</span>
+                      <div className="fixture-team fixture-team-away">
+                        <img src={event.awayLogo} alt="" aria-hidden="true" loading="lazy" />
+                        <h3>{event.away}</h3>
+                      </div>
                     </div>
-                    <p>{event.meta}</p>
+                    <p className="fixture-meta">{event.meta}</p>
                   </>
                 ) : (
                   <>

@@ -1996,3 +1996,100 @@ footer p:last-child {
     white-space: normal;
   }
 }
+
+
+/* Fixture lockup refinement — crest sits beside its team name */
+.fixture-match-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
+  align-items: center;
+  justify-content: stretch;
+  gap: 10px;
+  min-height: 42px;
+}
+
+.fixture-team {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fixture-team-home {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.fixture-team-away {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.fixture-team h3 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: clamp(18px, 1.55vw, 24px);
+  line-height: 1;
+}
+
+.fixture-team img {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.fixture-match-line > .fixture-dash {
+  display: block;
+  align-self: center;
+  justify-self: center;
+  color: #6f6e69;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.fixture-meta {
+  margin-top: 10px !important;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .fixture-match-line {
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+    gap: 7px;
+  }
+
+  .fixture-team {
+    gap: 7px;
+  }
+
+  .fixture-team h3 {
+    font-size: 19px !important;
+  }
+
+  .fixture-team img {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+@media (max-width: 680px) {
+  .fixture-match-line {
+    grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .fixture-team {
+    gap: 5px;
+  }
+
+  .fixture-team h3 {
+    white-space: normal;
+    font-size: 16px !important;
+  }
+
+  .fixture-team img {
+    width: 25px;
+    height: 25px;
+  }
+}
