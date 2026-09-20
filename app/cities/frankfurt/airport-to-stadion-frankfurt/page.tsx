@@ -13,7 +13,7 @@ export default function Page() {
     <TravelGuide
       kicker="FRANKFURT / AIRPORT TO STADIUM"
       title="AIRPORT TO"
-      accent="STADION FRANKFURT."
+      accent="STADION FRANKFURT"
       lede="Frankfurt's airport rail network and the stadium's south-city location make public transport the natural planning starting point for a short final trip."
       facts={[
         ["S8 / S9", "Airport regional rail"],
@@ -21,7 +21,7 @@ export default function Page() {
         ["26 MAY", "2027 final"],
         ["PUBLIC TRANSIT", "Planning priority"],
       ]}
-      introTitle="THE AIRPORT, CITY AND STADIUM SHARE THE SAME RAIL LOGIC."
+      introTitle="THE AIRPORT, CITY AND STADIUM SHARE THE SAME RAIL LOGIC"
       paragraphs={[
         "Frankfurt Airport's official site lists S-Bahn lines S8 and S9 among the services using its regional station. The airport also has a separate long-distance station for ICE and IC services.",
         "Deutsche Bank Park's normal-event guidance identifies S7, S8 and S9 from Frankfurt Hauptbahnhof toward the Frankfurt Stadion stop, followed by a walk to the venue. Final-specific UEFA operations for 26 May 2027 may differ, so use this as trip-planning context rather than a final-day guarantee.",
