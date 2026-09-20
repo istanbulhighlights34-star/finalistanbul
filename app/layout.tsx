@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   },
   description:
     "A global travel guide to major sports finals: dates, host cities, stadiums, where to stay, how to get there and what to do around the event.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   keywords: [
     "sports finals",
     "finals calendar",
