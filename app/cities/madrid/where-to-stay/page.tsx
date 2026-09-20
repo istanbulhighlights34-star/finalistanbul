@@ -13,7 +13,7 @@ export default function Page() {
     <TravelGuide
       kicker="MADRID / WHERE TO STAY"
       title="WHERE TO STAY"
-      accent="MADRID 2027."
+      accent="MADRID 2027"
       lede="The stadium is east of the historic centre, so the right hotel depends on whether you prioritise the final journey, the city weekend or the airport."
       facts={[
         ["CENTRO", "City-first base"],
@@ -21,7 +21,7 @@ export default function Page() {
         ["SALAMANCA", "East-central option"],
         ["EAST MADRID", "Venue-first option"],
       ]}
-      introTitle="DO NOT BOOK BY STADIUM DISTANCE ALONE."
+      introTitle="DO NOT BOOK BY STADIUM DISTANCE ALONE"
       paragraphs={[
         "Estadio Metropolitano sits in the Rosas area and has its own Line 7 metro station. That means many visitors can stay centrally and treat matchday as a planned metro journey rather than moving the whole weekend to the stadium district.",
         "For a short final-only trip, east Madrid can reduce the matchday transfer. For a longer first visit, Centro, Las Letras or Salamanca can give you more of Madrid outside the game while keeping the venue reachable by public transport.",
