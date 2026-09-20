@@ -156,7 +156,7 @@ export default function EventGuide({
       <section className="paper-section">
         <div className="section-heading">
           <p className="kicker">PLAN THE TRIP</p>
-          <h2>WHAT WE KNOW NOW.</h2>
+          <h2>WHAT WE KNOW NOW</h2>
         </div>
         <div className="zone-grid">
           {items.map(([a, b], i) => (
@@ -167,7 +167,7 @@ export default function EventGuide({
 
       <section className="planning-section">
         <p className="kicker">KEEP EXPLORING</p>
-        <h2>BUILD THE FINAL AROUND THE CITY.</h2>
+        <h2>BUILD THE FINAL AROUND THE CITY</h2>
         <div className="planning-grid">
           <Link href={cityHref}><span>{cityName} city guide →</span></Link>
           {guideLinks.map((g) => <Link href={g.href} key={g.href}><span>{g.label} →</span></Link>)}
