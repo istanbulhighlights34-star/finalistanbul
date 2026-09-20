@@ -85,14 +85,14 @@ export default function VenueGuide({
       <section className="detail-section">
         <div className="detail-title">
           <p className="kicker">VENUE ORIENTATION</p>
-          <h2>KNOW THE GROUND BEFORE MATCHDAY.</h2>
+          <h2>KNOW THE GROUND BEFORE MATCHDAY</h2>
         </div>
         <div className="prose-column">{paragraphs.map(p=><p key={p}>{p}</p>)}</div>
       </section>
 
       <section className="planning-section">
         <p className="kicker">2027 EVENTS</p>
-        <h2>FINALS AT THIS VENUE.</h2>
+        <h2>FINALS AT THIS VENUE</h2>
         <div className="planning-grid">
           {eventLinks.map(e=><Link href={e.href} key={e.href}><span>{e.label} →</span></Link>)}
           <Link href={cityHref}><span>{city} city guide →</span></Link>
