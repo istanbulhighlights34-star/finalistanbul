@@ -156,7 +156,7 @@ export default function Home() {
               <div className="event-card-body">
                 <img className="event-card-logo" src={event.logo} alt="" aria-hidden="true" loading="lazy" />
                 <p>{event.eyebrow}</p>
-                <h3>{event.title}</h3>
+                <h3>{eventtitle}</h3>
                 <p className="event-subtitle">{event.subtitle}</p>
               </div>
               <div className="event-card-footer">
@@ -215,13 +215,13 @@ export default function Home() {
       <section className="guide-section" id="guide">
         <div className="section-heading dark">
           <p className="kicker">THE ATLAS</p>
-          <h2>FROM HOST CITY TO FINAL WHISTLE.</h2>
+          <h2>FROM HOST CITY TO FINAL WHISTLE</h2>
         </div>
         <div className="guide-grid">
           {guides.map((guide) => (
             <article key={guide.number}>
               <span>{guide.number}</span>
-              <h3>{guide.title}</h3>
+              <h3>{guidetitle}</h3>
               <p>{guide.text}</p>
             </article>
           ))}
@@ -234,7 +234,7 @@ export default function Home() {
         </div>
         <div className="istanbul-copy">
           <p className="kicker">LAUNCH CITY / 01</p>
-          <h2>STARTING IN ISTANBUL. BUILT FOR THE WORLD.</h2>
+          <h2>STARTING IN ISTANBUL BUILT FOR THE WORLD</h2>
           <p>
             Finals Atlas starts with Istanbul as its first deep city hub, then
             expands final by final into Madrid, Frankfurt and beyond. Each city
