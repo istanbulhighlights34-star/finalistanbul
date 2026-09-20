@@ -1172,3 +1172,45 @@ footer p:last-child {
     border-bottom: 1px solid #bdb9af;
   }
 }
+
+
+/* Travel guide linking and source references */
+
+.planning-grid a {
+  display: block;
+}
+
+.planning-grid a:hover span {
+  background: var(--acid);
+  color: var(--ink);
+}
+
+.official-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center;
+  margin-top: 42px;
+  padding-top: 26px;
+  border-top: 1px solid #333;
+}
+
+.official-source-links .kicker {
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.official-source-links a {
+  border-bottom: 1px solid #555;
+  padding-bottom: 6px;
+  color: #b6b5af;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.official-source-links a:hover {
+  color: var(--acid);
+  border-color: var(--acid);
+}
