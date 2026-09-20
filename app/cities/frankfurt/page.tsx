@@ -31,11 +31,7 @@ export default function FrankfurtPage() {
 
       <section className="page-hero city-hero">
         <p className="kicker">CITY 03 / GERMANY</p>
-        <h1>
-          FRANKFURT
-          <br />
-          <span>26 MAY 2027.</span>
-        </h1>
+        <h1>FRANKFURT<br /><span>26 MAY 2027.</span></h1>
         <p className="page-lede">
           Stadion Frankfurt hosts the 2026/27 UEFA Europa League final. A compact,
           well-connected host city makes this one of 2027's most straightforward
@@ -64,8 +60,7 @@ export default function FrankfurtPage() {
           <p>
             Frankfurt's airport, central station and relatively compact center
             make it particularly suitable for a two- or three-night final trip.
-            Our guide will focus on efficient arrival, hotel location and the
-            stadium journey.
+            Our guide focuses on efficient arrival, hotel location and the stadium journey.
           </p>
         </div>
       </section>
@@ -77,25 +72,19 @@ export default function FrankfurtPage() {
         </div>
         <div className="zone-grid">
           {zones.map(([name, text], i) => (
-            <article key={name}>
-              <span>0{i + 1}</span>
-              <h3>{name}</h3>
-              <p>{text}</p>
-            </article>
+            <article key={name}><span>0{i + 1}</span><h3>{name}</h3><p>{text}</p></article>
           ))}
         </div>
       </section>
 
       <section className="planning-section">
-        <p className="kicker">GUIDE ROADMAP</p>
+        <p className="kicker">TRAVEL GUIDES</p>
         <h2>FRANKFURT FINAL WEEK.</h2>
         <div className="planning-grid">
-          <span>Stadium transport</span>
-          <span>Rail arrival strategy</span>
-          <span>Airport transfer</span>
-          <span>Official ticket links</span>
-          <span>Where to stay</span>
-          <span>24-hour Frankfurt plan</span>
+          <Link href="/cities/frankfurt/where-to-stay"><span>Where to stay →</span></Link>
+          <Link href="/cities/frankfurt/airport-to-stadion-frankfurt"><span>Airport to stadium →</span></Link>
+          <Link href="/finals/europa-league-final-frankfurt-2027"><span>Europa League Final →</span></Link>
+          <Link href="/stadiums/stadion-frankfurt"><span>Stadion Frankfurt guide →</span></Link>
         </div>
       </section>
 
