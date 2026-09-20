@@ -31,7 +31,7 @@ export default function FrankfurtPage() {
 
       <section className="page-hero city-hero">
         <p className="kicker">CITY 03 / GERMANY</p>
-        <h1>FRANKFURT<br /><span>26 MAY 2027.</span></h1>
+        <h1>FRANKFURT<br /><span>26 MAY 2027</span></h1>
         <p className="page-lede">
           Stadion Frankfurt hosts the 2026/27 UEFA Europa League final. A compact,
           well-connected host city makes this one of 2027's most straightforward
