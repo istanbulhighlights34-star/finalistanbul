@@ -1619,3 +1619,201 @@ footer p:last-child {
     gap: 5px;
   }
 }
+
+
+/* Competition identity across city and venue hubs */
+
+.city-competition-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #0d0d0d;
+  border-bottom: 1px solid #292929;
+}
+
+.city-competition-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.competition-showcase-card {
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: minmax(170px, .45fr) 1fr;
+  align-items: center;
+  gap: 38px;
+  padding: 42px;
+  border-right: 1px solid #292929;
+  transition: background 180ms ease;
+}
+
+.competition-showcase-card:last-child {
+  border-right: 0;
+}
+
+.competition-showcase-card:hover {
+  background: #151515;
+}
+
+.competition-logo-wrap {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: #f3f0e8;
+}
+
+.competition-logo-wrap img {
+  width: 100%;
+  max-width: 210px;
+  max-height: 130px;
+  object-fit: contain;
+}
+
+.competition-showcase-card > div:last-child > span {
+  color: var(--acid);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.competition-showcase-card h2 {
+  margin: 16px 0 10px;
+  font-size: clamp(30px, 3vw, 52px);
+  line-height: .94;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.competition-showcase-card p {
+  margin: 0;
+  color: #8c8b84;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.event-date-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.event-date-logo > span {
+  color: var(--acid);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.event-date-logo > img {
+  width: 54px;
+  height: 44px;
+  object-fit: contain;
+  object-position: left center;
+  background: white;
+  padding: 5px;
+}
+
+.fixture-crests {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.fixture-crests img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.fixture-crests span {
+  color: #666;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.venue-competition-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  border-bottom: 1px solid #292929;
+  background: #101010;
+}
+
+.venue-competition-mark {
+  min-height: 160px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: center;
+  gap: 22px;
+  padding: 28px 42px;
+  border-right: 1px solid #292929;
+}
+
+.venue-competition-mark:last-child {
+  border-right: 0;
+}
+
+.venue-competition-mark img {
+  width: 100%;
+  height: 78px;
+  object-fit: contain;
+  background: #f3f0e8;
+  padding: 10px;
+}
+
+.venue-competition-mark span {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .city-competition-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .competition-showcase-card {
+    border-right: 0;
+    border-bottom: 1px solid #292929;
+    padding: 30px 20px;
+  }
+
+  .competition-logo-wrap {
+    height: 150px;
+  }
+
+  .venue-competition-mark {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .competition-showcase-card {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .competition-logo-wrap {
+    height: 135px;
+  }
+
+  .detail-row-with-logos {
+    gap: 16px;
+  }
+
+  .event-date-logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .event-date-logo > img {
+    width: 50px;
+    height: 38px;
+  }
+
+  .venue-competition-mark {
+    grid-template-columns: 88px 1fr;
+  }
+}
