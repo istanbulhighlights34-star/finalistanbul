@@ -61,7 +61,7 @@ export default function IstanbulPage() {
 
       <section className="page-hero city-hero">
         <p className="kicker">CITY 01 / TÜRKİYE</p>
-        <h1>ISTANBUL<br /><span>2027.</span></h1>
+        <h1>ISTANBUL<br /><span>2027</span></h1>
         <p className="page-lede">
           Four Spanish clubs in February. A UEFA final in June. Three major
           football venues, two continents and one of the strongest launch cities
