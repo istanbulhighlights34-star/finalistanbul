@@ -93,6 +93,27 @@ a {
   border-color: var(--acid);
 }
 
+.blog-header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.blog-header-journal {
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255,255,255,.42);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.blog-header-journal:hover {
+  color: var(--acid);
+  border-color: var(--acid);
+}
+
 .hero {
   position: relative;
   min-height: 100svh;
@@ -1264,10 +1285,19 @@ footer p:last-child {
 
 @media (max-width: 560px) {
   .page-header {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
   }
 
   .page-header .header-cta {
+    display: none;
+  }
+
+  .page-header .header-actions,
+  .blog-header-actions {
+    gap: 0;
+  }
+
+  .blog-header-actions > a:last-child {
     display: none;
   }
 

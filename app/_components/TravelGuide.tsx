@@ -47,9 +47,10 @@ export default function TravelGuide({
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>
         </nav>
-        <Link className="header-cta" href="/finals">
-          2027 Calendar
-        </Link>
+        <div className="header-actions">
+          <Link className="header-blog" href="/blog">Journal</Link>
+          <Link className="header-cta" href="/finals">2027 Calendar</Link>
+        </div>
       </header>
 
       <section className="page-hero city-hero">

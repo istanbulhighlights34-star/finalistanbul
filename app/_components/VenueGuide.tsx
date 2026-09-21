@@ -43,7 +43,7 @@ export default function VenueGuide({
       <header className="page-header">
         <Link className="brand" href="/"><span>FINALS</span><span>ATLAS</span></Link>
         <nav><Link href="/finals">Finals</Link><Link href={cityHref}>{city}</Link></nav>
-        <Link className="header-cta" href="/finals">2027 Calendar</Link>
+        <div className="header-actions"><Link className="header-blog" href="/blog">Journal</Link><Link className="header-cta" href="/finals">2027 Calendar</Link></div>
       </header>
 
       <section className="page-hero">
