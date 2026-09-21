@@ -64,13 +64,33 @@ a {
 }
 
 .header-cta {
-  justify-self: end;
   padding: 11px 15px;
   border: 1px solid rgba(255, 255, 255, 0.35);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+}
+
+.header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-blog {
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.header-blog:hover {
+  color: var(--acid);
+  border-color: var(--acid);
 }
 
 .hero {
@@ -780,7 +800,11 @@ footer p:last-child {
   }
 
   .site-header {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
+  }
+
+  .header-actions {
+    gap: 0;
   }
 
   .hero h1 {
