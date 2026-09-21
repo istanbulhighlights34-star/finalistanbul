@@ -29,6 +29,11 @@ export default function FrankfurtPage() {
         <p className="page-lede">Stadion Frankfurt hosts the 2026/27 UEFA Europa League final. A compact, well-connected host city makes this one of 2027's most straightforward finals trips to plan.</p>
       </section>
 
+      <figure className="city-photo-band">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Deutsche%20bank%20park.jpg" alt="Stadion Frankfurt exterior" loading="eager" />
+        <figcaption><span>FRANKFURT / STADIUM DISTRICT</span><span>Photo: Patrik Meyer · CC BY-SA 4.0 / Wikimedia Commons</span></figcaption>
+      </figure>
+
       <section className="city-facts">
         <div><span>26 MAY</span><strong>Final date</strong></div>
         <div><span>WEDNESDAY</span><strong>Matchday</strong></div>
