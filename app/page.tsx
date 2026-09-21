@@ -66,6 +66,8 @@ const latestArticles = [
     title: "How to Plan a Final Week in Istanbul",
     text: "Choose the right base, cross the city with confidence and keep matchday clear of avoidable travel stress.",
     href: "/blog/istanbul-final-week-travel-plan",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Vodafone%20Park%2C%20Istanbul%20%28from%20outside%29.jpg",
+    imageAlt: "Tüpraş Stadium beside the Bosphorus in Istanbul",
   },
   {
     city: "Madrid",
@@ -73,6 +75,8 @@ const latestArticles = [
     title: "How to Build a Madrid Final Weekend",
     text: "A city-first plan for accommodation, stadium travel and the hours around a major final at Estadio Metropolitano.",
     href: "/blog/madrid-champions-league-final-weekend-plan",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Metropolitano%2C%20Madrid.png",
+    imageAlt: "Estadio Metropolitano in Madrid",
   },
   {
     city: "Frankfurt",
@@ -80,6 +84,8 @@ const latestArticles = [
     title: "Make a Compact Final City Work for You",
     text: "Use Frankfurt’s scale and transport connections to keep a short final trip simple, flexible and enjoyable.",
     href: "/blog/frankfurt-europa-league-final-trip-plan",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Deutsche%20bank%20park.jpg",
+    imageAlt: "Stadion Frankfurt exterior",
   },
 ];
 
@@ -103,8 +109,11 @@ export default function Home() {
 
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Finals Atlas home">
-          <span>FINALS</span>
-          <span>ATLAS</span>
+          <img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" />
+          <span className="brand-name">
+            <span>FINALS</span>
+            <span>ATLAS</span>
+          </span>
         </Link>
         <nav aria-label="Primary navigation">
           <Link href="/finals">Finals</Link>
@@ -123,6 +132,9 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
+        <div className="hero-photo" aria-hidden="true">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rams%20Park%20i%C3%A7%20g%C3%B6r%C3%BCn%C3%BCm%202025.jpg" alt="" />
+        </div>
         <div className="hero-noise" />
         <div className="hero-topline">
           <span>GLOBAL FINALS & TRAVEL GUIDE</span>
@@ -270,6 +282,9 @@ export default function Home() {
         <div className="latest-grid">
           {latestArticles.map((article, index) => (
             <Link className="latest-card" href={article.href} key={article.href}>
+              <div className="latest-card-image">
+                <img src={article.image} alt={article.imageAlt} loading="lazy" />
+              </div>
               <div className="latest-card-meta">
                 <span>{article.city}</span>
                 <span>{article.read}</span>
