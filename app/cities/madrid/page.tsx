@@ -29,6 +29,11 @@ export default function MadridPage() {
         <p className="page-lede">The 2026/27 UEFA Champions League season ends at Estadio Metropolitano. Finals Atlas is building the travel layer around the biggest club final in European football.</p>
       </section>
 
+      <figure className="city-photo-band">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Metropolitano%2C%20Madrid.png" alt="Estadio Metropolitano in Madrid" loading="eager" />
+        <figcaption><span>MADRID / METROPOLITANO</span><span>Photo: Sevicombo10 · CC BY-SA 4.0 / Wikimedia Commons</span></figcaption>
+      </figure>
+
       <section className="city-facts">
         <div><span>05 JUN</span><strong>Final date</strong></div>
         <div><span>SATURDAY</span><strong>Matchday</strong></div>
