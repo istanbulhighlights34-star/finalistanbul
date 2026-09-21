@@ -75,6 +75,11 @@ export default function IstanbulPage() {
         </p>
       </section>
 
+      <figure className="city-photo-band">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vodafone%20Park%2C%20Istanbul%20%28from%20outside%29.jpg" alt="Tüpraş Stadium and the Bosphorus waterfront in Istanbul" loading="eager" />
+        <figcaption><span>ISTANBUL / BOSPHORUS</span><span>Photo: Olos88 · CC0 / Wikimedia Commons</span></figcaption>
+      </figure>
+
       <section className="city-facts">
         <div><span>02—06 FEB</span><strong>Spanish Super Cup</strong></div>
         <div><span>02 JUN</span><strong>Conference League Final</strong></div>
