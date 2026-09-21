@@ -465,6 +465,104 @@ a {
   font-size: 14px;
 }
 
+.latest-section {
+  padding: 110px 42px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.latest-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 58px;
+}
+
+.latest-heading .kicker {
+  color: #65645d;
+}
+
+.latest-heading h2 {
+  max-width: 900px;
+  margin: 12px 0 0;
+  font-size: clamp(50px, 7vw, 106px);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+}
+
+.latest-heading .text-link {
+  flex: 0 0 auto;
+  border-color: #aaa79d;
+}
+
+.latest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #b8b4a9;
+  border-bottom: 1px solid #b8b4a9;
+}
+
+.latest-card {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px 30px 0;
+  border-right: 1px solid #b8b4a9;
+}
+
+.latest-card + .latest-card {
+  padding-left: 32px;
+}
+
+.latest-card:last-child {
+  border-right: 0;
+}
+
+.latest-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #65645d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.latest-card-number {
+  margin: 74px 0 18px;
+  color: #8d8a81;
+  font-size: 11px;
+}
+
+.latest-card h3 {
+  max-width: 380px;
+  margin: 0;
+  font-size: clamp(28px, 2.7vw, 42px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.latest-card p {
+  max-width: 390px;
+  margin: 22px 0 38px;
+  color: #62615b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.latest-card-arrow {
+  margin-top: auto;
+  font-size: 24px;
+  transition: transform 160ms ease;
+}
+
+.latest-card:hover .latest-card-arrow {
+  transform: translate(5px, -5px);
+}
+
 .istanbul-section {
   position: relative;
   min-height: 700px;
@@ -588,8 +686,34 @@ footer p:last-child {
   }
 
   .events-section,
-  .guide-section {
+  .guide-section,
+  .latest-section {
     padding: 80px 20px;
+  }
+
+  .latest-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .latest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-card,
+  .latest-card + .latest-card {
+    min-height: 330px;
+    padding: 24px 0 28px;
+    border-right: 0;
+    border-bottom: 1px solid #b8b4a9;
+  }
+
+  .latest-card:last-child {
+    border-bottom: 0;
+  }
+
+  .latest-card-number {
+    margin-top: 48px;
   }
 
   .event-grid {
