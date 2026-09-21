@@ -809,6 +809,11 @@ footer p:last-child {
     margin-top: 48px;
   }
 
+  .latest-card-image {
+    height: 220px;
+    margin: 0 0 24px;
+  }
+
   .event-grid {
     grid-template-columns: 1fr;
   }
@@ -1047,7 +1052,8 @@ footer p:last-child {
 .city-photo-band figcaption span:first-child { color: var(--acid); }
 
 .latest-card-image {
-  aspect-ratio: 16 / 9;
+  height: 260px;
+  aspect-ratio: auto;
   margin: -1px -1px 28px;
   overflow: hidden;
   background: #111;
