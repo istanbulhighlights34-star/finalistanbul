@@ -133,8 +133,9 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-photo" aria-hidden="true">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rams%20Park%20i%C3%A7%20g%C3%B6r%C3%BCn%C3%BCm%202025.jpg" alt="" />
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wembley%20Stadium%20interior.jpg" alt="" />
         </div>
+        <a className="hero-photo-credit" href="https://commons.wikimedia.org/wiki/File:Wembley_Stadium_interior.jpg" target="_blank" rel="noreferrer">Wembley Stadium · Photo: Jbmg40 / CC BY-SA 3.0</a>
         <div className="hero-noise" />
         <div className="hero-topline">
           <span>GLOBAL FINALS & TRAVEL GUIDE</span>
