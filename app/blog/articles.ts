@@ -1,5 +1,6 @@
 export type Article = {
   slug: string; city: string; title: string; dek: string; read: string;
+  image: string; imageAlt: string;
   intro: string; sections: { heading: string; paragraphs: string[] }[];
   links: { href: string; label: string }[];
 };
@@ -7,6 +8,7 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "istanbul-final-week-travel-plan", city: "Istanbul", read: "8 min read",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Vodafone%20Park%2C%20Istanbul%20%28from%20outside%29.jpg", imageAlt: "Tüpraş Stadium beside the Bosphorus in Istanbul",
     title: "How to Plan a Final Week in Istanbul",
     dek: "A practical framework for choosing a base, crossing the city and protecting matchday from avoidable travel stress.",
     intro: "Istanbul rewards supporters who plan the week around geography rather than a checklist. The city spans two continents, its best experiences are spread across distinct districts, and a stadium journey can feel very different from an ordinary sightseeing day. The goal is not to schedule every hour. It is to make a few decisions early so the final remains the centre of the trip.",
@@ -20,6 +22,7 @@ export const articles: Article[] = [
   },
   {
     slug: "istanbul-matchday-transport-strategy", city: "Istanbul", read: "7 min read",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Rams%20Park%20i%C3%A7%20g%C3%B6r%C3%BCn%C3%BCm%202025.jpg", imageAlt: "RAMS Park interior in Istanbul",
     title: "Istanbul Matchday Transport: Build a Route That Can Bend",
     dek: "Why a resilient stadium plan needs a primary route, a fallback and enough time to absorb event-day changes.",
     intro: "The best matchday transport plan is not the one with the shortest theoretical journey. It is the one that still works when streets are busy, crowd routing changes or you decide to spend the afternoon somewhere different. Istanbul has a deep public-transport network, but final-day movement deserves more margin than an ordinary city trip.",
@@ -33,6 +36,7 @@ export const articles: Article[] = [
   },
   {
     slug: "madrid-champions-league-final-weekend-plan", city: "Madrid", read: "8 min read",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Metropolitano%2C%20Madrid.png", imageAlt: "Estadio Metropolitano in Madrid",
     title: "How to Build a Madrid Final Weekend",
     dek: "A city-first plan for accommodation, stadium travel and the hours around a major final at Estadio Metropolitano.",
     intro: "Madrid is unusually easy to enjoy without turning a final weekend into a transport exercise. The centre is walkable, the metro does the heavy lifting for longer journeys and Estadio Metropolitano sits outside the historic core. That combination makes one principle especially useful: stay for the city, then plan the stadium journey as a dedicated matchday trip.",
@@ -46,6 +50,7 @@ export const articles: Article[] = [
   },
   {
     slug: "frankfurt-europa-league-final-trip-plan", city: "Frankfurt", read: "7 min read",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Deutsche%20bank%20park.jpg", imageAlt: "Stadion Frankfurt exterior",
     title: "Frankfurt Final Trip: Make a Compact City Work for You",
     dek: "How to use Frankfurt’s scale, transport connections and central districts to keep a final trip simple.",
     intro: "Frankfurt offers a different kind of finals trip. The city is compact, the airport is close to the urban core and the stadium is connected to the wider transport network. That can make planning feel simple — but major-event crowds still reward a clear base, an early stadium departure and a sensible post-match plan.",
@@ -59,6 +64,7 @@ export const articles: Article[] = [
   },
   {
     slug: "final-week-travel-checklist", city: "Travel", read: "9 min read",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Metropolitano%2C%20Madrid.png", imageAlt: "A major European football stadium prepared for matchday",
     title: "The Final-Week Travel Checklist That Actually Matters",
     dek: "A reusable checklist for any major football final: what to lock early, what to leave flexible and what to verify at the last minute.",
     intro: "Final trips combine two kinds of planning. Some decisions improve when they are made months ahead; others are safer when they stay flexible until organizers publish final operational details. A good checklist separates those categories so you do not waste energy trying to confirm information that does not yet exist — or forget the basics that were available all along.",
