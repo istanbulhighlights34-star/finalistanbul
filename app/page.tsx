@@ -59,6 +59,30 @@ const spanishSuperCup = [
   ["06 FEB", "Spanish Super Cup Final", "22:00 local · RAMS Park"],
 ];
 
+const latestArticles = [
+  {
+    city: "Istanbul",
+    read: "8 min read",
+    title: "How to Plan a Final Week in Istanbul",
+    text: "Choose the right base, cross the city with confidence and keep matchday clear of avoidable travel stress.",
+    href: "/blog/istanbul-final-week-travel-plan",
+  },
+  {
+    city: "Madrid",
+    read: "8 min read",
+    title: "How to Build a Madrid Final Weekend",
+    text: "A city-first plan for accommodation, stadium travel and the hours around a major final at Estadio Metropolitano.",
+    href: "/blog/madrid-champions-league-final-weekend-plan",
+  },
+  {
+    city: "Frankfurt",
+    read: "7 min read",
+    title: "Make a Compact Final City Work for You",
+    text: "Use Frankfurt’s scale and transport connections to keep a short final trip simple, flexible and enjoyable.",
+    href: "/blog/frankfurt-europa-league-final-trip-plan",
+  },
+];
+
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -87,6 +111,7 @@ export default function Home() {
           <Link href="/cities/istanbul">Istanbul</Link>
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>
+          <Link href="/blog">Blog</Link>
         </nav>
         <Link className="header-cta" href="/finals">
           Explore 2027
@@ -224,6 +249,32 @@ export default function Home() {
               <h3>{guide.title}</h3>
               <p>{guide.text}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="latest-section" aria-labelledby="latest-heading">
+        <div className="latest-heading">
+          <div>
+            <p className="kicker">JOURNAL / FIELD NOTES</p>
+            <h2 id="latest-heading">LATEST FROM THE ATLAS</h2>
+          </div>
+          <Link className="text-link" href="/blog">
+            View all articles <span>→</span>
+          </Link>
+        </div>
+        <div className="latest-grid">
+          {latestArticles.map((article, index) => (
+            <Link className="latest-card" href={article.href} key={article.href}>
+              <div className="latest-card-meta">
+                <span>{article.city}</span>
+                <span>{article.read}</span>
+              </div>
+              <span className="latest-card-number">0{index + 1}</span>
+              <h3>{article.title}</h3>
+              <p>{article.text}</p>
+              <span className="latest-card-arrow" aria-hidden="true">↗</span>
+            </Link>
           ))}
         </div>
       </section>
