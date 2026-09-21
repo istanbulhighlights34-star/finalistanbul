@@ -198,6 +198,19 @@ a {
   filter: saturate(.72) contrast(1.08);
 }
 
+.hero-photo-credit {
+  position: absolute;
+  z-index: 4;
+  right: 42px;
+  bottom: 104px;
+  color: rgba(255,255,255,.48);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hero-photo-credit:hover { color: var(--acid); }
+
 .hero-topline {
   position: absolute;
   top: 112px;
