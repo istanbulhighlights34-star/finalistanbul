@@ -111,11 +111,15 @@ export default function Home() {
           <Link href="/cities/istanbul">Istanbul</Link>
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>
-          <Link href="/blog">Blog</Link>
         </nav>
-        <Link className="header-cta" href="/finals">
-          Explore 2027
-        </Link>
+        <div className="header-actions">
+          <Link className="header-blog" href="/blog">
+            Journal
+          </Link>
+          <Link className="header-cta" href="/finals">
+            Explore 2027
+          </Link>
+        </div>
       </header>
 
       <section className="hero" id="top">
