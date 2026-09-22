@@ -58,8 +58,10 @@ export default function EventGuide({
     <main className="content-page">
       <header className="page-header">
         <Link className="brand" href="/">
+          <img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" />
+          <span className="brand-name">
           <span>FINALS</span>
-          <span>ATLAS</span>
+          <span>ATLAS</span></span>
         </Link>
         <nav>
           <Link href="/finals">Finals</Link>
@@ -183,7 +185,7 @@ export default function EventGuide({
       </section>
 
       <footer>
-        <div className="brand footer-brand"><span>FINALS</span><span>ATLAS</span></div>
+        <div className="brand footer-brand"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></div>
         <p>Independent travel guide. Event and club marks are shown for editorial identification; Finals Atlas is not an official partner.</p>
         <p>© 2026 Finals Atlas</p>
       </footer>
