@@ -5,7 +5,7 @@ import { useState } from "react";
 import styles from "./arena.module.css";
 
 const sports = ["Football", "Basketball"];
-const footballModes = ["Ligler", "Avrupa Kupaları"];
+const footballModes = ["Domestic Leagues", "European Cups"];
 const matches = [
   ["CUM", "Galatasaray", "Fenerbahçe"],
   ["CMT", "Manchester City", "Liverpool"],
@@ -60,8 +60,8 @@ export default function ArenaPage() {
               {sport === "Football" && <div className={styles.leagueTabs}>
                 {footballModes.map((item) => <button key={item} className={competition === item ? styles.leagueTabActive : styles.leagueTab} onClick={() => setCompetition(item)}>{item}</button>)}
               </div>}
-              <h2>{sport === "Football" ? `${competition} / Haftanın maçları` : "EuroLeague / Haftanın maçları"}</h2>
-              <p className={styles.muted}>Her maç için 1, X veya 2 seç. Maç başladıktan sonra tahmin kilitlenir.</p>
+              <h2>{sport === "Football" ? `${competition} / This week&apos;s matches` : "EuroLeague / This week&apos;s matches"}</h2>
+              <p className={styles.muted}>Choose 1, X or 2 for each match. Picks lock when the match starts.</p>
               <div className={styles.matchList}>
                 {activeMatches.map(([day, home, away]) => (
                   <div className={styles.matchRow} key={home}>
@@ -70,7 +70,7 @@ export default function ArenaPage() {
                   </div>
                 ))}
               </div>
-              <p className={styles.status}>{Object.keys(predictions).length} / {activeMatches.length} tahmin tamamlandı · Puanlar maçlardan sonra açıklanır.</p>
+              <p className={styles.status}>{Object.keys(predictions).length} / {activeMatches.length} picks complete · Points are posted after the matches.</p>
             </div>
           </article>
 
