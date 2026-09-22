@@ -35,7 +35,7 @@ export default function ArenaPage() {
           <Link href="/finals">Leagues</Link>
           <Link href="/blog">Journal</Link>
         </nav>
-        <Link className={styles.headerButton} href="/finals">Explore finals ↗</Link>
+        <Link className={styles.headerButton} href="/arena/create">Yeni lig oluştur ↗</Link>
       </header>
 
       <div className={styles.shell}>
