@@ -36,7 +36,7 @@ export const articles: Article[] = [
   },
   {
     slug: "madrid-champions-league-final-weekend-plan", city: "Madrid", read: "8 min read",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Gran%20V%C3%ADa%2C%20Madrid.jpg", imageAlt: "Gran Vía in Madrid",
+    image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1600&q=85", imageAlt: "Madrid city skyline",
     title: "How to Build a Madrid Final Weekend",
     dek: "A city-first plan for accommodation, stadium travel and the hours around a major final at Estadio Metropolitano.",
     intro: "Madrid is unusually easy to enjoy without turning a final weekend into a transport exercise. The centre is walkable, the metro does the heavy lifting for longer journeys and Estadio Metropolitano sits outside the historic core. That combination makes one principle especially useful: stay for the city, then plan the stadium journey as a dedicated matchday trip.",
