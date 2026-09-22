@@ -12,13 +12,18 @@
 }
 .brand {
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
   width: max-content;
   font-weight: 900;
   font-size: 17px;
   letter-spacing: -0.06em;
   line-height: 0.82;
 }
+.brand::before { content: ""; width: 34px; height: 34px; flex: 0 0 auto; display: block; background: url('/icon.svg') center / contain no-repeat; }
+.brandName { display: inline-flex; flex-direction: column; line-height: .82; }
+.brand > span:not(.brandName) { display: inline-flex; flex-direction: column; line-height: .82; }
 .nav {
   display: flex;
   gap: 28px;
