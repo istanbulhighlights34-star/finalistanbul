@@ -117,7 +117,6 @@ export default function Home() {
         </Link>
         <nav aria-label="Primary navigation">
           <Link href="/finals">Finals</Link>
-          <Link href="/arena">Arena</Link>
           <Link href="/cities/istanbul">Istanbul</Link>
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>
@@ -125,6 +124,9 @@ export default function Home() {
         <div className="header-actions">
           <Link className="header-blog" href="/blog">
             Journal
+          </Link>
+          <Link className="header-blog" href="/arena">
+            Arena
           </Link>
           <Link className="header-cta" href="/finals">
             Explore 2027
