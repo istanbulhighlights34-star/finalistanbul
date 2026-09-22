@@ -24,6 +24,9 @@
 .pick:hover, .pickSelected { background: #d5ff3f; border-color: #d5ff3f; color: #101210; }
 .status { min-height: 18px; margin: 18px 0 0; color: #d5ff3f; font: 700 11px Arial, sans-serif; letter-spacing: .03em; }
 .leagueTabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0 30px; }
+.sportTabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 20px 0 12px; }
+.sportTab, .sportTabActive { padding: 16px 14px; border: 1px solid #4c5548; background: #111511; color: #9ca49a; cursor: pointer; font: 700 13px Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+.sportTabActive { border-color: #d5ff3f; background: #d5ff3f; color: #101210; }
 .leagueTab, .leagueTabActive { padding: 9px 12px; border: 1px solid #4c5548; background: transparent; color: #9ca49a; cursor: pointer; font: 700 10px Arial, sans-serif; text-transform: uppercase; letter-spacing: .06em; }
 .leagueTabActive { border-color: #d5ff3f; background: #d5ff3f; color: #101210; }
 .matchList { margin-top: 25px; border-top: 1px solid #30352f; }
