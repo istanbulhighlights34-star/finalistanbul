@@ -150,7 +150,7 @@ export default function Home() {
           <h1>
             FOLLOW THE FINAL
             <br />
-            <span>DISCOVER THE CITY</span>
+            <span>ARRIVE IN THE CITY</span>
           </h1>
           <p className="hero-description">
             A global travel guide built around major sports finals — dates,
