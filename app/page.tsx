@@ -117,6 +117,7 @@ export default function Home() {
         </Link>
         <nav aria-label="Primary navigation">
           <Link href="/finals">Finals</Link>
+          <Link href="/arena">Arena</Link>
           <Link href="/cities/istanbul">Istanbul</Link>
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>
