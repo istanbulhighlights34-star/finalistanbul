@@ -21,7 +21,7 @@
   letter-spacing: -0.06em;
   line-height: 0.82;
 }
-.brand::before { content: ""; width: 34px; height: 34px; flex: 0 0 auto; display: block; background: url('/icon.svg') center / contain no-repeat; }
+.brand::before { content: ""; width: 34px; height: 34px; flex: 0 0 auto; display: block; background-image: url('/icon.svg'); background-position: center; background-repeat: no-repeat; background-size: contain; }
 .brandName { display: inline-flex; flex-direction: column; line-height: .82; }
 .brand > span:not(.brandName) { display: inline-flex; flex-direction: column; line-height: .82; }
 .nav {
