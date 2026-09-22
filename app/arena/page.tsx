@@ -26,9 +26,9 @@ export default function ArenaPage() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <Link className={styles.brand} href="/" aria-label="Finals Atlas home">
-          <img className={styles.brandMark} src="/icon.svg" alt="" aria-hidden="true" />
-          <span className={styles.brandName}>FINALS<br />ATLAS</span>
+        <Link className="brand" href="/" aria-label="Finals Atlas home">
+          <img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" />
+          <span className="brand-name"><span>FINALS</span><span>ATLAS</span></span>
         </Link>
         <nav aria-label="Arena navigation">
           <Link className={styles.active} href="/arena">Arena</Link>
