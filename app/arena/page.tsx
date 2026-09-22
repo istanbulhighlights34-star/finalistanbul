@@ -7,14 +7,14 @@ import styles from "./arena.module.css";
 const sports = ["Football", "Basketball"];
 const footballModes = ["Domestic Leagues", "European Cups"];
 const matches = [
-  ["CUM", "Galatasaray", "Fenerbahçe"],
-  ["CMT", "Manchester City", "Liverpool"],
-  ["PAZ", "Bayern", "Dortmund"],
+  ["FRI", "Galatasaray", "Fenerbahçe"],
+  ["SAT", "Manchester City", "Liverpool"],
+  ["SUN", "Bayern", "Dortmund"],
 ];
 const basketballMatches = [
-  ["SAL", "Fenerbahçe Beko", "Panathinaikos"],
-  ["ÇAR", "Real Madrid", "Anadolu Efes"],
-  ["PER", "Olympiacos", "Barcelona"],
+  ["TUE", "Fenerbahçe Beko", "Panathinaikos"],
+  ["WED", "Real Madrid", "Anadolu Efes"],
+  ["THU", "Olympiacos", "Barcelona"],
 ];
 
 export default function ArenaPage() {
@@ -35,7 +35,7 @@ export default function ArenaPage() {
           <Link href="/finals">Leagues</Link>
           <Link href="/blog">Journal</Link>
         </nav>
-        <Link className={styles.headerButton} href="/arena/create">Yeni lig oluştur ↗</Link>
+        <Link className={styles.headerButton} href="/arena/create">Create a league ↗</Link>
       </header>
 
       <div className={styles.shell}>
@@ -46,7 +46,7 @@ export default function ArenaPage() {
             <p className={styles.kicker}>THE YEAR-ROUND SPORTS WORLD</p>
             <h1>Make every<br /><em>final</em> count.</h1>
           </div>
-          <p className={styles.introText}>Spor dalını seç, kendi yarışmana katıl. Futbol ve basketbol puanları birbirinden tamamen ayrı tutulur.</p>
+          <p className={styles.introText}>Choose your sport and join your own competition. Football and basketball points are kept completely separate.</p>
         </section>
 
         <section className={styles.heroGrid}>
