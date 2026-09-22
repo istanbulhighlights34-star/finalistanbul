@@ -46,7 +46,6 @@ export default function ArenaPage() {
             <p className={styles.kicker}>THE YEAR-ROUND SPORTS WORLD</p>
             <h1>Make every<br /><em>final</em> count.</h1>
           </div>
-          <p className={styles.introText}>Choose your sport and join your own competition. Football and basketball points are kept completely separate.</p>
         </section>
 
         <section className={styles.heroGrid}>
