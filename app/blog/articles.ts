@@ -23,7 +23,7 @@ export const articles: Article[] = [
   {
     slug: "istanbul-matchday-transport-strategy", city: "Istanbul", read: "7 min read",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Rams%20Park%20i%C3%A7%20g%C3%B6r%C3%BCn%C3%BCm%202025.jpg", imageAlt: "RAMS Park interior in Istanbul",
-    title: "Istanbul Matchday Transport: Build a Route That Can Bend",
+    title: "Istanbul Matchday Transport Plan",
     dek: "Why a resilient stadium plan needs a primary route, a fallback and enough time to absorb event-day changes.",
     intro: "The best matchday transport plan is not the one with the shortest theoretical journey. It is the one that still works when streets are busy, crowd routing changes or you decide to spend the afternoon somewhere different. Istanbul has a deep public-transport network, but final-day movement deserves more margin than an ordinary city trip.",
     sections: [
