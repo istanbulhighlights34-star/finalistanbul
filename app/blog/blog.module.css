@@ -21,10 +21,8 @@
   letter-spacing: -0.06em;
   line-height: 0.82;
 }
-.brand::before { content: ""; width: 34px; height: 34px; flex: 0 0 auto; display: block; background-image: url('/icon.svg'); background-position: center; background-repeat: no-repeat; background-size: contain; }
+.brandMark { width: 34px; height: 34px; flex: 0 0 auto; }
 .brandName { display: inline-flex; flex-direction: column; line-height: .82; }
-.brand > span:not(.brandName) { display: flex !important; flex-direction: column !important; line-height: .82; }
-.brand > span:not(.brandName) span { display: block; }
 .nav {
   display: flex;
   gap: 28px;
