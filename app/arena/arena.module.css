@@ -23,6 +23,16 @@
 .pick, .pickSelected { display: flex; justify-content: space-between; padding: 18px 14px; border: 1px solid #4c5548; background: transparent; color: #f5f3eb; cursor: pointer; font: 700 13px Arial, sans-serif; text-align: left; }
 .pick:hover, .pickSelected { background: #d5ff3f; border-color: #d5ff3f; color: #101210; }
 .status { min-height: 18px; margin: 18px 0 0; color: #d5ff3f; font: 700 11px Arial, sans-serif; letter-spacing: .03em; }
+.leagueTabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0 30px; }
+.leagueTab, .leagueTabActive { padding: 9px 12px; border: 1px solid #4c5548; background: transparent; color: #9ca49a; cursor: pointer; font: 700 10px Arial, sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+.leagueTabActive { border-color: #d5ff3f; background: #d5ff3f; color: #101210; }
+.matchList { margin-top: 25px; border-top: 1px solid #30352f; }
+.matchRow { display: grid; grid-template-columns: 35px minmax(100px, 1fr) 20px minmax(100px, 1fr) auto; align-items: center; gap: 9px; min-height: 58px; border-bottom: 1px solid #30352f; font: 12px Arial, sans-serif; }
+.matchDay { color: #d5ff3f; font: 700 10px Arial, sans-serif; }
+.vs { color: #6f776c; text-align: center; }
+.resultButtons { display: flex; gap: 4px; }
+.result, .resultActive { width: 27px; height: 27px; border: 1px solid #4c5548; background: transparent; color: #aab2a5; cursor: pointer; font: 700 11px Arial, sans-serif; }
+.resultActive { border-color: #d5ff3f; background: #d5ff3f; color: #101210; }
 .seasonCard { padding-bottom: 25px; }
 .score { padding: 35px 24px 25px; display: flex; flex-direction: column; gap: 5px; }
 .score strong { font: 700 78px/.8 Arial, sans-serif; letter-spacing: -.1em; }
@@ -36,4 +46,4 @@
 .leagueRow strong { flex: 1; }.leagueRow > span:last-child { color: #d5ff3f; font-weight: 700; }.rank { color: #737b71; font-size: 11px; }.you { background: #222b1e; }
 .unlockIcon { width: 30px; height: 30px; display: grid; place-items: center; color: #101210; background: #d5ff3f; font: 700 10px Arial; }.unlock div { flex: 1; }.unlock strong { font: 700 13px Arial; }.unlock p { margin: 4px 0 0; color: #8f978d; font: 12px Arial; }.done, .next { color: #d5ff3f; font: 700 9px Arial; letter-spacing: .08em; }.next { color: #858e83; }
 .bottomStrip { margin-top: 45px; padding-top: 20px; border-top: 1px solid #343732; }
-@media (max-width: 720px) { .header { padding: 0 4vw; }.header nav { gap: 12px; margin-right: 12px; }.header nav a:nth-child(2) { display: none; }.headerButton { padding: 11px 10px; font-size: 9px; }.shell { width: 90vw; }.intro { display: block; padding: 58px 0 40px; }.introText { margin-top: 28px; }.heroGrid, .dashboardGrid { grid-template-columns: 1fr; }.challengeBody { padding: 28px 20px; }.pickGrid { grid-template-columns: 1fr; }.bottomStrip { display: block; line-height: 2; } }
+@media (max-width: 720px) { .header { padding: 0 4vw; }.header nav { gap: 12px; margin-right: 12px; }.header nav a:nth-child(2) { display: none; }.headerButton { padding: 11px 10px; font-size: 9px; }.shell { width: 90vw; }.intro { display: block; padding: 58px 0 40px; }.introText { margin-top: 28px; }.heroGrid, .dashboardGrid { grid-template-columns: 1fr; }.challengeBody { padding: 28px 20px; }.pickGrid { grid-template-columns: 1fr; }.matchRow { grid-template-columns: 28px minmax(70px, 1fr) 12px minmax(70px, 1fr); font-size: 11px; }.resultButtons { grid-column: 2 / -1; padding-bottom: 10px; }.bottomStrip { display: block; line-height: 2; } }
