@@ -38,8 +38,10 @@ export default function TravelGuide({
     <main className="content-page">
       <header className="page-header">
         <Link className="brand" href="/" aria-label="Finals Atlas home">
+          <img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" />
+          <span className="brand-name">
           <span>FINALS</span>
-          <span>ATLAS</span>
+          <span>ATLAS</span></span>
         </Link>
         <nav>
           <Link href="/finals">Finals</Link>
@@ -142,8 +144,10 @@ export default function TravelGuide({
 
       <footer>
         <div className="brand footer-brand">
+          <img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" />
+          <span className="brand-name">
           <span>FINALS</span>
-          <span>ATLAS</span>
+          <span>ATLAS</span></span>
         </div>
         <p>
           Independent travel guide. Verify event-specific operations with official
