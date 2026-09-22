@@ -56,7 +56,7 @@ export default function IstanbulPage() {
   return (
     <main className="content-page">
       <header className="page-header">
-        <Link className="brand" href="/"><span>FINALS</span><span>ATLAS</span></Link>
+        <Link className="brand" href="/"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></Link>
         <nav>
           <Link href="/finals">Finals</Link>
           <Link href="/cities/istanbul">Istanbul</Link>
@@ -187,7 +187,7 @@ export default function IstanbulPage() {
       </section>
 
       <footer>
-        <div className="brand footer-brand"><span>FINALS</span><span>ATLAS</span></div>
+        <div className="brand footer-brand"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></div>
         <p>Independent editorial guide. Competition and club marks identify the events covered.</p>
         <p>© 2026 Finals Atlas</p>
       </footer>
