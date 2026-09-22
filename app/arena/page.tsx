@@ -4,10 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "./arena.module.css";
 
-const picks = ["Istanbul", "Madrid", "Frankfurt"];
+const leagues = ["Süper Lig", "Premier League", "Bundesliga", "La Liga"];
+const matches = [
+  ["CUM", "Galatasaray", "Fenerbahçe"],
+  ["CMT", "Manchester City", "Liverpool"],
+  ["PAZ", "Bayern", "Dortmund"],
+];
 
 export default function ArenaPage() {
-  const [pick, setPick] = useState<string | null>(null);
+  const [league, setLeague] = useState(leagues[0]);
+  const [predictions, setPredictions] = useState<Record<string, string>>({});
 
   return (
     <main className={styles.page}>
@@ -32,35 +38,39 @@ export default function ArenaPage() {
             <p className={styles.kicker}>THE YEAR-ROUND SPORTS WORLD</p>
             <h1>Make every<br /><em>final</em> count.</h1>
           </div>
-          <p className={styles.introText}>A shared season for the people who follow the final together. Make a pick, climb your friend league and unlock the next city.</p>
+          <p className={styles.introText}>Her hafta dört büyük ligden maçları tahmin et, arkadaş grubunda puan topla ve sezon boyunca canlı kal.</p>
         </section>
 
         <section className={styles.heroGrid}>
           <article className={styles.challenge}>
-            <div className={styles.cardTop}><span>TODAY&apos;S CHALLENGE</span><span>+25 ATLAS POINTS</span></div>
+            <div className={styles.cardTop}><span>WEEK 04 / MATCH PREDICTIONS</span><span>DEADLINE: CUM 19:00</span></div>
             <div className={styles.challengeBody}>
-              <p className={styles.eyebrow}>COMMUNITY PICK · WEEK 04</p>
-              <h2>Where would you build your next final weekend?</h2>
-              <p className={styles.muted}>Choose a city. The group pulse closes when the next fixture starts.</p>
-              <div className={styles.pickGrid}>
-                {picks.map((option) => (
-                  <button key={option} className={pick === option ? styles.pickSelected : styles.pick} onClick={() => setPick(option)}>
-                    <span>{option}</span><span>↗</span>
-                  </button>
+              <p className={styles.eyebrow}>CHOOSE YOUR LEAGUE</p>
+              <div className={styles.leagueTabs}>
+                {leagues.map((item) => <button key={item} className={league === item ? styles.leagueTabActive : styles.leagueTab} onClick={() => setLeague(item)}>{item}</button>)}
+              </div>
+              <h2>{league} / Haftanın maçları</h2>
+              <p className={styles.muted}>Her maç için 1, X veya 2 seç. Maç başladıktan sonra tahmin kilitlenir.</p>
+              <div className={styles.matchList}>
+                {matches.map(([day, home, away]) => (
+                  <div className={styles.matchRow} key={home}>
+                    <span className={styles.matchDay}>{day}</span><strong>{home}</strong><span className={styles.vs}>—</span><strong>{away}</strong>
+                    <div className={styles.resultButtons}>{["1", "X", "2"].map((result) => <button key={result} className={predictions[home] === result ? styles.resultActive : styles.result} onClick={() => setPredictions({ ...predictions, [home]: result })}>{result}</button>)}</div>
+                  </div>
                 ))}
               </div>
-              <p className={styles.status}>{pick ? `Your pick: ${pick}. Locked for this season prototype.` : "Make your first pick to enter the season."}</p>
+              <p className={styles.status}>{Object.keys(predictions).length} / {matches.length} tahmin tamamlandı · Puanlar maçlardan sonra açıklanır.</p>
             </div>
           </article>
 
           <aside className={styles.seasonCard}>
             <div className={styles.cardTop}><span>YOUR SEASON</span><span>01 / 04</span></div>
-            <div className={styles.score}><strong>184</strong><span>ATLAS POINTS</span></div>
+            <div className={styles.score}><strong>184</strong><span>SEASON POINTS</span></div>
             <div className={styles.statRow}><span>Current rank</span><strong>#03</strong></div>
-            <div className={styles.statRow}><span>Pick streak</span><strong>4 days</strong></div>
+            <div className={styles.statRow}><span>This week</span><strong>+18 pts</strong></div>
             <div className={styles.progress}><span style={{ width: "68%" }} /></div>
-            <p className={styles.muted}>68% to your next city unlock</p>
-            <Link className={styles.textLink} href="/cities/istanbul">View your Atlas →</Link>
+            <p className={styles.muted}>68% to the next season level</p>
+            <Link className={styles.textLink} href="/finals">View the leaderboard →</Link>
           </aside>
         </section>
 
