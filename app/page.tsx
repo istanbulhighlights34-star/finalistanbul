@@ -54,9 +54,9 @@ const guides = [
 ];
 
 const spanishSuperCup = [
-  { date: "02 FEB", match: "Barcelona — Atlético Madrid", time: "22:00 local", stadium: "Chobani Stadium", image: "https://commons.wikimedia.org/wiki/Special:FilePath/%C5%9E%C3%BCkr%C3%BC%20Saraco%C4%9Flu%20Stadium%20inside.jpg", alt: "Stadium interior in Istanbul" },
-  { date: "03 FEB", match: "Real Sociedad — Real Madrid", time: "22:00 local", stadium: "Tüpraş Stadium", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Vodafone%20Park%2C%20Istanbul%20%28from%20outside%29.jpg", alt: "Tüpraş Stadium in Istanbul" },
-  { date: "06 FEB", match: "Spanish Super Cup Final", time: "22:00 local", stadium: "RAMS Park", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Rams%20Park%20i%C3%A7%20g%C3%B6r%C3%BCn%C3%BCm%202025.jpg", alt: "RAMS Park interior in Istanbul" },
+  ["02 FEB", "Barcelona — Atlético Madrid", "22:00 local · Chobani Stadium"],
+  ["03 FEB", "Real Sociedad — Real Madrid", "22:00 local · Tüpraş Stadium"],
+  ["06 FEB", "Spanish Super Cup Final", "22:00 local · RAMS Park"],
 ];
 
 const latestArticles = [
@@ -235,12 +235,11 @@ export default function Home() {
             football — and a city worth staying for.
           </p>
           <div className="fixtures">
-            {spanishSuperCup.map((fixture) => (
-              <div className="fixture" key={fixture.match}>
-                <img className="fixture-stadium-image" src={fixture.image} alt={fixture.alt} loading="lazy" />
-                <span>{fixture.date}</span>
-                <strong>{fixture.match}</strong>
-                <small>{fixture.time} · {fixture.stadium}</small>
+            {spanishSuperCup.map(([date, match, meta]) => (
+              <div className="fixture" key={match}>
+                <span>{date}</span>
+                <strong>{match}</strong>
+                <small>{meta}</small>
               </div>
             ))}
           </div>
