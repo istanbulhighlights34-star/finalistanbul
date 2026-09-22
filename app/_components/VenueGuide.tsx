@@ -41,7 +41,7 @@ export default function VenueGuide({
   return (
     <main className="content-page">
       <header className="page-header">
-        <Link className="brand" href="/"><span>FINALS</span><span>ATLAS</span></Link>
+        <Link className="brand" href="/"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></Link>
         <nav><Link href="/finals">Finals</Link><Link href={cityHref}>{city}</Link></nav>
         <div className="header-actions"><Link className="header-blog" href="/blog">Journal</Link><Link className="header-cta" href="/finals">2027 Calendar</Link></div>
       </header>
@@ -102,7 +102,7 @@ export default function VenueGuide({
       </section>
 
       <footer>
-        <div className="brand footer-brand"><span>FINALS</span><span>ATLAS</span></div>
+        <div className="brand footer-brand"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></div>
         <p>Independent venue guide. Competition marks are used for editorial identification.</p>
         <p>© 2026 Finals Atlas</p>
       </footer>
