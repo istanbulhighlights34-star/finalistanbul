@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Brand from "./_components/Brand";
 
 const events = [
   {
@@ -321,11 +322,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="brand footer-brand">
-          <img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" />
-          <span>FINALS</span>
-          <span>ATLAS</span>
-        </div>
+        <Brand className="footer-brand" />
         <p>
           Independent editorial guide. Event and club marks identify the subjects covered; Finals Atlas is not affiliated with UEFA, RFEF,
           Formula 1, participating clubs, federations or venue operators.
