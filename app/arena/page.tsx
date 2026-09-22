@@ -27,12 +27,11 @@ export default function ArenaPage() {
     <main className={styles.page}>
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Finals Atlas home">
-          <img src="/icon.svg" alt="" aria-hidden="true" />
-          <span>FINALS<br />ATLAS</span>
+          <img className={styles.brandMark} src="/icon.svg" alt="" aria-hidden="true" />
+          <span className={styles.brandName}>FINALS<br />ATLAS</span>
         </Link>
         <nav aria-label="Arena navigation">
           <Link className={styles.active} href="/arena">Arena</Link>
-          <Link href="/finals">Leagues</Link>
           <Link href="/blog">Journal</Link>
         </nav>
         <Link className={styles.headerButton} href="/arena/create">Create a league ↗</Link>
