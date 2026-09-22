@@ -4,16 +4,24 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "./arena.module.css";
 
-const leagues = ["Süper Lig", "Premier League", "Bundesliga", "La Liga"];
+const sports = ["Football", "Basketball"];
+const footballModes = ["Ligler", "Avrupa Kupaları"];
 const matches = [
   ["CUM", "Galatasaray", "Fenerbahçe"],
   ["CMT", "Manchester City", "Liverpool"],
   ["PAZ", "Bayern", "Dortmund"],
 ];
+const basketballMatches = [
+  ["SAL", "Fenerbahçe Beko", "Panathinaikos"],
+  ["ÇAR", "Real Madrid", "Anadolu Efes"],
+  ["PER", "Olympiacos", "Barcelona"],
+];
 
 export default function ArenaPage() {
-  const [league, setLeague] = useState(leagues[0]);
+  const [sport, setSport] = useState(sports[0]);
+  const [competition, setCompetition] = useState(footballModes[0]);
   const [predictions, setPredictions] = useState<Record<string, string>>({});
+  const activeMatches = sport === "Basketball" ? basketballMatches : matches;
 
   return (
     <main className={styles.page}>
@@ -38,28 +46,31 @@ export default function ArenaPage() {
             <p className={styles.kicker}>THE YEAR-ROUND SPORTS WORLD</p>
             <h1>Make every<br /><em>final</em> count.</h1>
           </div>
-          <p className={styles.introText}>Her hafta dört büyük ligden maçları tahmin et, arkadaş grubunda puan topla ve sezon boyunca canlı kal.</p>
+          <p className={styles.introText}>Spor dalını seç, kendi yarışmana katıl. Futbol ve basketbol puanları birbirinden tamamen ayrı tutulur.</p>
         </section>
 
         <section className={styles.heroGrid}>
           <article className={styles.challenge}>
             <div className={styles.cardTop}><span>WEEK 04 / MATCH PREDICTIONS</span><span>DEADLINE: CUM 19:00</span></div>
             <div className={styles.challengeBody}>
-              <p className={styles.eyebrow}>CHOOSE YOUR LEAGUE</p>
-              <div className={styles.leagueTabs}>
-                {leagues.map((item) => <button key={item} className={league === item ? styles.leagueTabActive : styles.leagueTab} onClick={() => setLeague(item)}>{item}</button>)}
+              <p className={styles.eyebrow}>CHOOSE YOUR SPORT</p>
+              <div className={styles.sportTabs}>
+                {sports.map((item) => <button key={item} className={sport === item ? styles.sportTabActive : styles.sportTab} onClick={() => setSport(item)}>{item}</button>)}
               </div>
-              <h2>{league} / Haftanın maçları</h2>
+              {sport === "Football" && <div className={styles.leagueTabs}>
+                {footballModes.map((item) => <button key={item} className={competition === item ? styles.leagueTabActive : styles.leagueTab} onClick={() => setCompetition(item)}>{item}</button>)}
+              </div>}
+              <h2>{sport === "Football" ? `${competition} / Haftanın maçları` : "EuroLeague / Haftanın maçları"}</h2>
               <p className={styles.muted}>Her maç için 1, X veya 2 seç. Maç başladıktan sonra tahmin kilitlenir.</p>
               <div className={styles.matchList}>
-                {matches.map(([day, home, away]) => (
+                {activeMatches.map(([day, home, away]) => (
                   <div className={styles.matchRow} key={home}>
                     <span className={styles.matchDay}>{day}</span><strong>{home}</strong><span className={styles.vs}>—</span><strong>{away}</strong>
                     <div className={styles.resultButtons}>{["1", "X", "2"].map((result) => <button key={result} className={predictions[home] === result ? styles.resultActive : styles.result} onClick={() => setPredictions({ ...predictions, [home]: result })}>{result}</button>)}</div>
                   </div>
                 ))}
               </div>
-              <p className={styles.status}>{Object.keys(predictions).length} / {matches.length} tahmin tamamlandı · Puanlar maçlardan sonra açıklanır.</p>
+              <p className={styles.status}>{Object.keys(predictions).length} / {activeMatches.length} tahmin tamamlandı · Puanlar maçlardan sonra açıklanır.</p>
             </div>
           </article>
 
