@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: auto;
 }
 
 body {
@@ -20,6 +21,7 @@ body {
   color: white;
   font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-y: auto;
 }
 
 .hero-description, .section-heading > p, .spotlight-lede, .source-note,
