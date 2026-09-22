@@ -322,6 +322,7 @@ export default function Home() {
 
       <footer>
         <div className="brand footer-brand">
+          <img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" />
           <span>FINALS</span>
           <span>ATLAS</span>
         </div>
