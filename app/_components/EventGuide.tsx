@@ -168,6 +168,10 @@ export default function EventGuide({
             <article key={a}><span>0{i + 1}</span><h3>{a}</h3><p>{b}</p></article>
           ))}
         </div>
+        <figure className="ticket-feature">
+          <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1400&q=85" alt="Floodlit football stadium ready for matchday" loading="lazy" />
+          <figcaption>Matchday ticket planning · use official organiser channels only</figcaption>
+        </figure>
       </section>
 
       <section className="planning-section">
