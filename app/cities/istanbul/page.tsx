@@ -77,7 +77,7 @@ export default function IstanbulPage() {
 
       <figure className="city-photo-band">
         <img src="/images/tupras-stadium-no-person.webp" alt="Tüpraş Stadium exterior and Beşiktaş sign in Istanbul" loading="eager" />
-        <figcaption><span>ISTANBUL / BOSPHORUS</span><span>Photo: Olos88 · CC0 / Wikimedia Commons</span></figcaption>
+        <figcaption><span>ISTANBUL / BOSPHORUS</span><span>Tüpraş Stadium exterior</span></figcaption>
       </figure>
 
       <section className="city-facts">
