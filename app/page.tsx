@@ -67,8 +67,8 @@ const latestArticles = [
     title: "How to Plan a Final Week in Istanbul",
     text: "Choose the right base, cross the city with confidence and keep matchday clear of avoidable travel stress.",
     href: "/blog/istanbul-final-week-travel-plan",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Vodafone%20Park%2C%20Istanbul%20%28from%20outside%29.jpg",
-    imageAlt: "Tüpraş Stadium beside the Bosphorus in Istanbul",
+    image: "/images/tupras-stadium-no-person.webp",
+    imageAlt: "Tüpraş Stadium exterior and Beşiktaş sign in Istanbul",
   },
   {
     city: "Madrid",

@@ -76,7 +76,7 @@ export default function IstanbulPage() {
       </section>
 
       <figure className="city-photo-band">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vodafone%20Park%2C%20Istanbul%20%28from%20outside%29.jpg" alt="Tüpraş Stadium and the Bosphorus waterfront in Istanbul" loading="eager" />
+        <img src="/images/tupras-stadium-no-person.webp" alt="Tüpraş Stadium exterior and Beşiktaş sign in Istanbul" loading="eager" />
         <figcaption><span>ISTANBUL / BOSPHORUS</span><span>Photo: Olos88 · CC0 / Wikimedia Commons</span></figcaption>
       </figure>
 

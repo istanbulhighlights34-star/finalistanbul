@@ -8,7 +8,7 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "istanbul-final-week-travel-plan", city: "Istanbul", read: "8 min read",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Vodafone%20Park%2C%20Istanbul%20%28from%20outside%29.jpg", imageAlt: "Tüpraş Stadium beside the Bosphorus in Istanbul",
+    image: "/images/tupras-stadium-no-person.webp", imageAlt: "Tüpraş Stadium exterior and Beşiktaş sign in Istanbul",
     title: "How to Plan a Final Week in Istanbul",
     dek: "A practical framework for choosing a base, crossing the city and protecting matchday from avoidable travel stress.",
     intro: "Istanbul rewards supporters who plan the week around geography rather than a checklist. The city spans two continents, its best experiences are spread across distinct districts, and a stadium journey can feel very different from an ordinary sightseeing day. The goal is not to schedule every hour. It is to make a few decisions early so the final remains the centre of the trip.",
