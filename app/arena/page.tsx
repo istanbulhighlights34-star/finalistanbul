@@ -32,6 +32,16 @@ export default function ArenaPage() {
   const [picks, setPicks] = useState<Picks>(emptyPicks);
   const [saved, setSaved] = useState(true);
   const [clockSource, setClockSource] = useState<"checking" | "server" | "device">("checking");
+  const [account, setAccount] = useState<{ id: string; email: string } | null>(null);
+  const [available, setAvailable] = useState(false);
+  const [email, setEmail] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [message, setMessage] = useState("");
+  const [groups, setGroups] = useState<{ id: string; name: string }[]>([]);
+  const [groupName, setGroupName] = useState("");
+  const [selectedGroup, setSelectedGroup] = useState("");
+  const [standings, setStandings] = useState<{ name: string; points: number; picks: number }[]>([]);
+  const [inviteUrl, setInviteUrl] = useState("");
   const offset = useRef(0);
 
   useEffect(() => {
@@ -63,10 +73,64 @@ export default function ArenaPage() {
     return () => { clearInterval(interval); clearInterval(resync); };
   }, []);
 
+  useEffect(() => {
+    async function load() {
+      try {
+        const response = await fetch("/api/arena/auth", { cache: "no-store" });
+        const data = await response.json();
+        setAvailable(!!data.available);
+        setAccount(data.user || null);
+        setNickname(data.user?.nickname || "");
+        if (!data.user) return;
+        const [savedPicks, membership] = await Promise.all([fetch("/api/arena/picks"), fetch("/api/arena/groups")]);
+        if (savedPicks.ok) {
+          const values = (await savedPicks.json()).picks as Record<string, string>;
+          setPicks({ games: Object.fromEntries(Object.entries(values).filter(([key]) => key.startsWith("game:")).map(([key, value]) => [key.slice(5), value as "1" | "2"])), topScorer: values.topScorer || "", champion: values.champion || "", finalFour: JSON.parse(values.finalFour || "[]") });
+        }
+        if (membership.ok) setGroups((await membership.json()).groups);
+        const invite = new URLSearchParams(window.location.search).get("invite");
+        if (invite) {
+          const joined = await fetch("/api/arena/groups", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ invite }) });
+          if (joined.ok) {
+            const group = (await joined.json()).group;
+            setGroups(previous => previous.some(item => item.id === group.id) ? previous : [group, ...previous]);
+            setSelectedGroup(group.id);
+            history.replaceState(null, "", "/arena");
+            setMessage(`Joined ${group.name}`);
+          } else setMessage("Invitation could not be used.");
+        }
+      } catch { setMessage("Account service is unavailable."); }
+    }
+    void load();
+  }, []);
+
+  useEffect(() => {
+    if (!selectedGroup) return;
+    let active = true;
+    async function refresh() {
+      const response = await fetch(`/api/arena/groups/${selectedGroup}`, { cache: "no-store" });
+      if (response.ok && active) setStandings((await response.json()).standings);
+    }
+    void refresh();
+    const interval = setInterval(() => { void refresh(); }, 60_000);
+    return () => { active = false; clearInterval(interval); };
+  }, [selectedGroup]);
+
   function update(next: Picks) {
     setPicks(next);
-    try { localStorage.setItem(storageKey, JSON.stringify(next)); setSaved(true); }
-    catch { setSaved(false); }
+    if (account) {
+      const changed = Object.entries(next.games).find(([id, value]) => picks.games[id] !== value);
+      const key = changed ? `game:${changed[0]}` : next.topScorer !== picks.topScorer ? "topScorer" : next.champion !== picks.champion ? "champion" : "finalFour";
+      const selection = changed ? changed[1] : key === "topScorer" ? next.topScorer : key === "champion" ? next.champion : JSON.stringify(next.finalFour);
+      setSaved(false);
+      void fetch("/api/arena/picks", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ key, selection }) }).then(async response => {
+        if (!response.ok) { setPicks(picks); setMessage((await response.json()).error || "Could not save pick"); }
+        else setSaved(true);
+      }).catch(() => { setPicks(picks); setMessage("Could not save pick"); });
+    } else {
+      try { localStorage.setItem(storageKey, JSON.stringify(next)); setSaved(true); }
+      catch { setSaved(false); }
+    }
   }
 
   const bonusOpen = now !== null && now < firstLock;
@@ -83,7 +147,18 @@ export default function ArenaPage() {
     <div className={styles.shell}>
       <div className={styles.topline}><span>FINALS ATLAS / ARENA</span><span>EUROLEAGUE · 2026/27</span></div>
       <section className={styles.intro}><div><p className={styles.kicker}>ROUND 01 · 24–25 SEPTEMBER</p><h1>EuroLeague<br /><em>picks.</em></h1></div><p className={styles.introText}>Choose the winners, a top-scoring team and your season picks. Match times adjust to your device.</p></section>
-      <div className={styles.notice} role="status"><strong>Personal preview</strong><span>Your picks are saved in this browser only. Accounts, friend groups, leaderboards and official scoring are not active yet. Clearing browser data removes your picks. {clockSource === "device" && "Server time is unavailable; deadlines currently use your device clock."}</span></div>
+      <div className={styles.notice} role="status"><strong>{account ? `Signed in: ${account.email}` : "Personal preview"}</strong><span>{account ? "Your new picks are saved to your account. Scores appear after verified results are entered." : "Your picks are saved in this browser only. Sign in to save future picks and join groups. Existing device picks are not transferred after their deadlines."} {clockSource === "device" && "Server time is unavailable; deadlines currently use your device clock."}</span></div>
+      {available && <section className={styles.panel} style={{ padding: 24, marginBottom: 24 }} aria-label="Account and friend groups">
+        <div className={styles.panelHeading}><span>FRIENDS ARENA</span><span>EUROLEAGUE</span></div>
+        {!account ? <form onSubmit={async event => { event.preventDefault(); setMessage("Sending sign-in link…"); try { const response = await fetch("/api/arena/auth", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) }); const data = await response.json(); setMessage(response.ok ? "Check your email for a sign-in link. You will stay signed in for 90 days." : data.error); } catch { setMessage("Could not send sign-in link."); } }}><p>Sign in with email to save picks and compete with friends.</p><input type="email" required placeholder="you@example.com" value={email} onChange={event => setEmail(event.target.value)} style={{ padding: 12, maxWidth: "100%" }} /> <button className={styles.result} type="submit">Email me a sign-in link</button></form> : <div>
+          <form onSubmit={async event => { event.preventDefault(); const response = await fetch("/api/arena/auth", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ nickname }) }); setMessage(response.ok ? "Nickname saved." : "Could not save nickname."); }}><label htmlFor="nickname">Leaderboard nickname</label><br /><input id="nickname" maxLength={32} required value={nickname} onChange={event => setNickname(event.target.value)} placeholder="Your nickname" style={{ padding: 12, maxWidth: "100%" }} /> <button className={styles.result} type="submit">Save name</button></form>
+          <form onSubmit={async event => { event.preventDefault(); const response = await fetch("/api/arena/groups", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: groupName }) }); const data = await response.json(); if (response.ok) { setGroups(previous => [data.group, ...previous]); setSelectedGroup(data.group.id); setInviteUrl(data.inviteUrl); setGroupName(""); setMessage("Group created. Share the invitation link with friends."); } else setMessage(data.error); }}><label htmlFor="group-name">Create a friend group</label><br /><input id="group-name" maxLength={60} required value={groupName} onChange={event => setGroupName(event.target.value)} placeholder="Group name" style={{ padding: 12, maxWidth: "100%" }} /> <button className={styles.result} type="submit">Create group</button></form>
+          {inviteUrl && <p>Invitation link: <input readOnly aria-label="Invitation link" value={inviteUrl} onFocus={event => event.target.select()} style={{ width: "min(100%, 500px)", padding: 10 }} /></p>}
+          {groups.length > 0 && <div><p>Your groups</p>{groups.map(group => <button key={group.id} className={styles.result} type="button" onClick={() => setSelectedGroup(group.id)} style={{ marginRight: 8 }} aria-pressed={selectedGroup === group.id}>{group.name}</button>)}{selectedGroup && <ol>{standings.map(entry => <li key={entry.name}>{entry.name} · {entry.points} pts · {entry.picks} picks</li>)}</ol>}</div>}
+          <button type="button" className={styles.result} onClick={async () => { await fetch("/api/arena/auth", { method: "DELETE" }); location.reload(); }}>Sign out</button>
+        </div>}
+        {message && <p role="status">{message}</p>}
+      </section>}
       <section className={styles.heroGrid} aria-label="EuroLeague Round 1 predictions">
         <article className={styles.challenge}>
           <div className={styles.cardTop}><span>ROUND 01 / 10 GAMES</span><span>{timeZone}</span></div>
@@ -103,7 +178,7 @@ export default function ArenaPage() {
                 </div>
               </div>;
             })}</div>
-            <p className={styles.status}>{complete} / 10 selected · {openCount} games open · {saved ? "Saved on this device" : "Could not save on this device"}</p>
+            <p className={styles.status}>{complete} / 10 selected · {openCount} games open · {saved ? account ? "Saved to account" : "Saved on this device" : "Saving or unavailable"}</p>
           </div>
         </article>
         <aside className={styles.seasonCard}>
