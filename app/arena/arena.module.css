@@ -75,6 +75,7 @@
 .accountFields { display: flex; align-items: stretch; gap: 12px; width: 100%; }
 .accountFields input { flex: 1 1 280px; min-width: 0; padding: 12px 14px; border: 1px solid #4c5548; background: #f5f5f0; color: #101210; font: 16px Arial, sans-serif; }
 .accountFields .result { width: auto; min-width: 190px; height: auto; padding: 12px 16px; white-space: nowrap; }
+.signOut { width: auto; min-width: 100px; padding: 12px 16px; }
 .sideBody { padding: 26px; }
 .sideBody h2 { margin: 0 0 14px; font-size: clamp(26px, 3vw, 38px); letter-spacing: -.05em; line-height: 1.05; }
 .selectLabel { display: block; margin: 26px 0 8px; color: #e1e6db; font-size: 14px; font-weight: 700; }
