@@ -153,7 +153,7 @@ export default function ArenaPage() {
     </header>
     <div className={styles.shell}>
       <div className={styles.topline}><span>FINALS ATLAS / ARENA PULSE</span><span>EUROLEAGUE · 2026/27</span></div>
-      <section className={styles.intro}><div><p className={styles.kicker}>ROUND 01 · 24–25 SEPTEMBER</p><h1>Follow every final<br /><em>Across every arena.</em></h1></div><p className={styles.introText}>Choose the winners, a top-scoring team and your season picks. Match times adjust to your device.</p></section>
+      <section className={styles.intro}><div><p className={styles.kicker}>ROUND 01 · 24–25 SEPTEMBER</p><h1><span className={styles.heroInitial}>F</span>OLLOW EVERY FINAL<br /><em><span className={styles.heroInitial}>A</span>CROSS EVERY ARENA.</em></h1></div></section>
       <div className={styles.notice} role="status"><strong>{account ? `Signed in: ${account.email}` : "Personal preview"}</strong><span>{account ? "Your new picks are saved to your account. Scores appear after verified results are entered." : "Your picks are saved in this browser only. Sign in to save future picks and join groups. Existing device picks are not transferred after their deadlines."} {clockSource === "device" && "Server time is unavailable; deadlines currently use your device clock."}</span></div>
       {available && <section className={styles.panel} style={{ padding: 24, marginBottom: 24 }} aria-label="Account and friend groups">
         <div className={styles.panelHeading}><span>YOUR CIRCLE</span><span>EUROLEAGUE</span></div>
