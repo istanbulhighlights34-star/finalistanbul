@@ -76,6 +76,8 @@ export default function ArenaPage() {
   useEffect(() => {
     async function load() {
       try {
+        const inviteFromUrl = new URLSearchParams(window.location.search).get("invite");
+        if (inviteFromUrl) localStorage.setItem("finalsatlas-pending-invite", inviteFromUrl);
         const response = await fetch("/api/arena/auth", { cache: "no-store" });
         const data = await response.json();
         setAvailable(!!data.available);
@@ -88,7 +90,7 @@ export default function ArenaPage() {
           setPicks({ games: Object.fromEntries(Object.entries(values).filter(([key]) => key.startsWith("game:")).map(([key, value]) => [key.slice(5), value as "1" | "2"])), topScorer: values.topScorer || "", champion: values.champion || "", finalFour: JSON.parse(values.finalFour || "[]") });
         }
         if (membership.ok) setGroups((await membership.json()).groups);
-        const invite = new URLSearchParams(window.location.search).get("invite");
+        const invite = inviteFromUrl || localStorage.getItem("finalsatlas-pending-invite");
         if (invite) {
           const joined = await fetch("/api/arena/groups", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ invite }) });
           if (joined.ok) {
@@ -96,8 +98,12 @@ export default function ArenaPage() {
             setGroups(previous => previous.some(item => item.id === group.id) ? previous : [group, ...previous]);
             setSelectedGroup(group.id);
             history.replaceState(null, "", "/arena");
+            localStorage.removeItem("finalsatlas-pending-invite");
             setMessage(`Joined ${group.name}`);
-          } else setMessage("Invitation could not be used.");
+          } else {
+            setMessage("Invitation could not be used.");
+            if (joined.status === 404) localStorage.removeItem("finalsatlas-pending-invite");
+          }
         }
       } catch { setMessage("Account service is unavailable."); }
     }
