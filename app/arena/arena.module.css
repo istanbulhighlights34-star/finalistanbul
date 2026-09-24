@@ -226,3 +226,7 @@
 
 /* Strong FA initials */
 .intro h1 .heroInitial { font-size:1.6em !important; }
+
+
+/* Scale the complete headline while preserving FA ratio */
+.intro h1 { font-size:clamp(32px, 4.8vw, 64px) !important; }
