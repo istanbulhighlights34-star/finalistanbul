@@ -202,3 +202,8 @@
 .finalScore span { color:#d5ff3f; font:700 8px Arial,sans-serif; letter-spacing:.12em; }
 .finalScore strong { color:#f5f3eb; font:700 18px Arial,sans-serif; letter-spacing:.02em; }
 @media (max-width:720px) { .finalScore { grid-column:2/-1; align-items:flex-end; margin:0 0 8px; min-width:0; }.finalScore strong { font-size:16px; } }
+
+
+.finalScore strong { display:flex; align-items:center; gap:7px; }
+.finalScore strong i { color:#747d70; font-style:normal; font-size:14px; }
+.finalScore .winnerScore { color:#d5ff3f; }

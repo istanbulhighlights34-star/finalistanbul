@@ -208,7 +208,7 @@ export default function ArenaPage() {
               const locked = now === null || now >= Date.parse(game.tipoff) - 120_000;
               return <div className={styles.matchRow} key={game.id}>
                 <div className={styles.matchInfo}><time dateTime={game.tipoff}>{now === null ? "Checking local time…" : formatTime(game.tipoff)}</time><span>{now === null ? "Checking" : locked ? "Locked" : "Open"}</span></div>
-                <div className={styles.matchTeams}><strong>{game.home}</strong><span>vs</span><strong>{game.away}</strong></div>{game.result && <div className={styles.finalScore}><span>FINAL</span><strong>{game.result.home} – {game.result.away}</strong></div>}
+                <div className={styles.matchTeams}><strong>{game.home}</strong><span>vs</span><strong>{game.away}</strong></div>{game.result && <div className={styles.finalScore}><span>FINAL</span><strong><span className={game.result.home > game.result.away ? styles.winnerScore : ""}>{game.result.home}</span><i>–</i><span className={game.result.away > game.result.home ? styles.winnerScore : ""}>{game.result.away}</span></strong></div>}
                 <div className={styles.resultButtons} aria-label={`${game.home} vs ${game.away} winner`}>
                   {(["1", "2"] as const).map((choice) => <button key={choice} type="button" disabled={locked} aria-label={choice === "1" ? `${game.home} wins` : `${game.away} wins`} aria-pressed={picks.games[game.id] === choice} className={picks.games[game.id] === choice ? styles.resultActive : styles.result} onClick={() => {
                     if (Date.now() + offset.current >= Date.parse(game.tipoff) - 120_000) { setNow(Date.now() + offset.current); return; }
