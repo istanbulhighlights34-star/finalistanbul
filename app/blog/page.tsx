@@ -10,7 +10,7 @@ export default function Blog() {
     <header className={styles.header}>
       <Link className={styles.brand} href="/" aria-label="Finals Atlas home"><img className={styles.brandMark} src="/icon.svg" alt="" aria-hidden="true" /><span className={styles.brandName}><span>FINALS</span><span>ATLAS</span></span></Link>
       <nav className={styles.nav}><Link href="/finals">Finals</Link><Link href="/cities/istanbul">Istanbul</Link><Link href="/cities/madrid">Madrid</Link><Link href="/cities/frankfurt">Frankfurt</Link></nav>
-      <div className="blog-header-actions"><Link className="blog-header-journal" href="/blog" aria-current="page">Journal</Link><Link className="blog-header-journal" href="/arena">Arena</Link><Link className={styles.cta} href="/finals">2027 Calendar</Link></div>
+      <div className="blog-header-actions"><Link className="blog-header-journal" href="/blog" aria-current="page">Journal</Link><Link className="blog-header-journal" href="/arena">Arena</Link><Link className={styles.cta} href="/finals">Explore 2027</Link></div>
     </header>
     <section className={styles.hero}><p className={styles.kicker}>FINALS ATLAS / JOURNAL</p><h1>TRAVEL SMARTER FOR THE FINAL</h1><p>Field notes and evergreen planning guides for the days around the match — built to complement our city, stadium and transport guides without turning unconfirmed event details into facts.</p></section>
     <section className={styles.grid}>{articles.map(a => <Link className={styles.card} href={`/blog/${a.slug}`} key={a.slug}><div className={styles.cardImage}><img src={a.image} alt={a.imageAlt} loading="lazy" /></div><div className={styles.meta}><span>{a.city}</span><span>{a.read}</span></div><h2>{a.title}</h2><p>{a.dek}</p></Link>)}</section>
