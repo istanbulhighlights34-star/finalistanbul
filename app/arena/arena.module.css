@@ -53,3 +53,45 @@
 .unlockIcon { width: 30px; height: 30px; display: grid; place-items: center; color: #101210; background: #d5ff3f; font: 700 10px Arial; }.unlock div { flex: 1; }.unlock strong { font: 700 13px Arial; }.unlock p { margin: 4px 0 0; color: #8f978d; font: 12px Arial; text-align: justify; }.done, .next { color: #d5ff3f; font: 700 9px Arial; letter-spacing: .08em; }.next { color: #858e83; }
 .bottomStrip { margin-top: 45px; padding-top: 20px; border-top: 1px solid #343732; }
 @media (max-width: 720px) { .header { padding: 0 4vw; }.header nav { gap: 12px; margin-right: 12px; }.header nav a:nth-child(2) { display: none; }.headerButton { padding: 11px 10px; font-size: 9px; }.shell { width: 90vw; }.intro { display: block; padding: 58px 0 40px; }.introText { margin-top: 28px; }.heroGrid, .dashboardGrid { grid-template-columns: 1fr; }.challengeBody { padding: 28px 20px; }.pickGrid { grid-template-columns: 1fr; }.matchRow { grid-template-columns: 28px minmax(70px, 1fr) 12px minmax(70px, 1fr); font-size: 11px; }.resultButtons { grid-column: 2 / -1; padding-bottom: 10px; }.bottomStrip { display: block; line-height: 2; } }
+
+/* EuroLeague opening-round preview */
+.intro { padding: 58px 0 42px; }
+.introText { text-align: left; }
+.notice { display: flex; gap: 22px; align-items: baseline; margin-top: 18px; padding: 16px 20px; border: 1px solid #4b563b; background: #22291d; color: #c9d1c2; font: 15px/1.5 Arial, sans-serif; }
+.notice strong { flex: 0 0 auto; color: #d5ff3f; font-size: 14px; }
+.challengeBody { padding: 32px; }
+.challenge h2 { margin-bottom: 14px; }
+.muted { font-size: 15px; line-height: 1.55; text-align: left; }
+.matchRow { display: grid; grid-template-columns: minmax(130px, 180px) minmax(0, 1fr) 84px; gap: 16px; align-items: center; padding: 15px 0; min-height: 83px; font-size: 15px; }
+.matchInfo { display: flex; flex-direction: column; gap: 6px; color: #c1c9bc; font-size: 13px; }
+.matchInfo span { color: #d5ff3f; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; }
+.matchTeams { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; }
+.matchTeams strong { font-weight: 700; }
+.matchTeams span { color: #8f978d; font-size: 13px; }
+.resultButtons { display: flex; gap: 7px; }
+.result, .resultActive { width: 38px; height: 38px; font-size: 15px; border-radius: 3px; }
+.result:disabled, .resultActive:disabled { cursor: default; opacity: .7; }
+.sideBody { padding: 26px; }
+.sideBody h2 { margin: 0 0 14px; font-size: clamp(26px, 3vw, 38px); letter-spacing: -.05em; line-height: 1.05; }
+.selectLabel { display: block; margin: 26px 0 8px; color: #e1e6db; font-size: 14px; font-weight: 700; }
+.sideBody select { width: 100%; padding: 13px; border: 1px solid #697369; border-radius: 2px; background: #101410; color: #f5f3eb; font: 15px Arial, sans-serif; }
+.sideBody select:disabled { opacity: .68; }
+.teamPicker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; max-height: 340px; overflow: auto; margin-top: 22px; }
+.pick, .pickSelected { align-items: center; min-height: 50px; padding: 11px; font-size: 14px; line-height: 1.25; }
+.pick:disabled, .pickSelected:disabled { cursor: default; opacity: .6; }
+.bottomStrip { font-size: 12px; line-height: 1.5; }
+.bottomStrip a { color: #d5ff3f; }
+@media (max-width: 720px) {
+  .header { height: 70px; }
+  .header nav { margin-left: auto; }
+  .headerButton { display: none; }
+  .intro { padding: 50px 0 36px; }
+  .introText { max-width: 100%; }
+  .notice { display: block; }
+  .notice strong { display: block; margin-bottom: 6px; }
+  .challengeBody { padding: 24px 18px; }
+  .matchRow { grid-template-columns: 1fr 80px; gap: 10px; font-size: 15px; }
+  .matchInfo { grid-column: 1 / -1; }
+  .resultButtons { grid-column: auto; padding: 0; }
+  .teamPicker { grid-template-columns: 1fr 1fr; }
+}
