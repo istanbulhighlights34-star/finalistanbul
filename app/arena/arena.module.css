@@ -127,3 +127,15 @@
   .standingsHeader, .standings li { grid-template-columns: 28px minmax(0, 1fr) 70px 58px; gap: 8px; }
   .standingsHeader, .standings li { padding-left: 10px; padding-right: 10px; }
 }
+
+
+/* Arena Pulse refinement */
+.page { overflow-x: hidden; }
+.challenge, .seasonCard, .panel { border-radius: 4px; box-shadow: 0 18px 42px rgba(0,0,0,.18); }
+.matchRow strong, .player { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 720px) {
+  .header { min-height: 72px; padding: 14px 5vw; gap: 12px; }
+  .headerButton { white-space: nowrap; }
+  .matchRow { min-height: 76px; }
+  .result, .resultActive { min-width: 30px; min-height: 30px; }
+}
