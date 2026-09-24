@@ -216,3 +216,9 @@
 
 .heroInitial { display:inline-block; font-size:calc(100% + 4px) !important; line-height:inherit; letter-spacing:inherit; }
 .intro h1 { text-transform:uppercase; }
+
+
+/* Clean FA headline sizing */
+.intro h1 .heroLine { display:inline; color:#f5f3eb; font-style:normal; font-size:1em; line-height:.84; letter-spacing:-.09em; }
+.intro h1 .heroLine:nth-of-type(2) { color:#d5ff3f; }
+.intro h1 .heroInitial { display:inline; font-size:calc(1em + 4px) !important; line-height:inherit; font-style:normal; }
