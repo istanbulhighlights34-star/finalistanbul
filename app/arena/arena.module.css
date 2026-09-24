@@ -195,3 +195,10 @@
 .emptySportMeta strong { color:#d5ff3f; font-size:10px; }
 .hiddenSportContent { display:none; }
 @media (max-width:720px) { .emptySport { min-height:430px; padding:34px 20px; }.emptySport h2 { font-size:54px; }.emptySport p { font-size:14px; }.emptySportMeta { grid-template-columns:1fr; gap:6px; }.emptySportMeta strong { margin-bottom:10px; }.sportCard { border-right:0; } }
+
+
+/* Completed match result */
+.finalScore { display:flex; flex-direction:column; align-items:center; gap:4px; margin-left:auto; min-width:72px; }
+.finalScore span { color:#d5ff3f; font:700 8px Arial,sans-serif; letter-spacing:.12em; }
+.finalScore strong { color:#f5f3eb; font:700 18px Arial,sans-serif; letter-spacing:.02em; }
+@media (max-width:720px) { .finalScore { grid-column:2/-1; align-items:flex-end; margin:0 0 8px; min-width:0; }.finalScore strong { font-size:16px; } }
