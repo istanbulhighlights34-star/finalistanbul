@@ -168,8 +168,19 @@ export default function ArenaPage() {
       <section className={styles.pulseDashboard} aria-label="Arena Pulse overview">
         <div className={styles.pulseWelcome}>
           <span className={styles.pulseKicker}>ARENA PULSE</span>
-          <h2>{account ? `Welcome back, ${nickname || "player"}` : "Your season starts here"}</h2>
-          <p>{account ? "Your circle, your calls and your climb — all in one place." : "Sign in to save your calls, join a circle and climb the standings."}</p>
+          <h2>{account ? `Welcome back, ${nickname || "player"}` : "Choose your arena"}</h2>
+          <p>One home for every sport, every competition and every circle. Start with a sport or jump back into your season.</p>
+        </div>
+        <div className={styles.sportDashboard}>
+          <a className={`${styles.sportCard} ${styles.sportCardActive}`} href="#matchroom">
+            <span className={styles.sportNumber}>01</span><strong>Football</strong><small>Domestic leagues · European cups</small><b>Open arena →</b>
+          </a>
+          <a className={styles.sportCard} href="#matchroom">
+            <span className={styles.sportNumber}>02</span><strong>Basketball</strong><small>EuroLeague · season picks</small><b>Open arena →</b>
+          </a>
+          <div className={styles.sportCardComing}>
+            <span className={styles.sportNumber}>03+</span><strong>More sports</strong><small>New competitions will appear here as Finals Atlas grows.</small><b>Coming next</b>
+          </div>
         </div>
         <div className={styles.pulseMetrics}>
           <div><span>CALLS MADE</span><strong>{complete}<small> / 10</small></strong><em>{openCount} open</em></div>
@@ -177,11 +188,10 @@ export default function ArenaPage() {
           <div><span>YOUR CIRCLE</span><strong>{groups.length}</strong><em>{groups.length ? "Ready to play" : "Create or join"}</em></div>
         </div>
         <div className={styles.pulseActions}>
-          <a href="#matchroom">Open Matchroom <b>→</b></a>
-          <a href="#standings">View Standings <b>→</b></a>
+          <a href="#matchroom">Open selected arena <b>→</b></a>
+          <a href="#standings">View standings <b>→</b></a>
         </div>
-      </section>
-      <section id="matchroom" className={styles.heroGrid} aria-label="EuroLeague Round 1 predictions">
+      </section>      <section id="matchroom" className={styles.heroGrid} aria-label="EuroLeague Round 1 predictions">
         <article className={styles.challenge}>
           <div className={styles.cardTop}><span>ROUND 01 / 10 GAMES</span><span>{timeZone}</span></div>
           <div className={styles.challengeBody}>
