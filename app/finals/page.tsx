@@ -74,7 +74,7 @@ export default function FinalsPage() {
           <span>ATLAS</span></span>
         </Link>
         <nav>
-          <Link href="/finals">Finals</Link>
+          <Link href="/finals" aria-current="page">Finals</Link>
           <Link href="/cities/istanbul">Istanbul</Link>
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>

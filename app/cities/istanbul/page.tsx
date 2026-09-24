@@ -59,7 +59,7 @@ export default function IstanbulPage() {
         <Link className="brand" href="/"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></Link>
         <nav>
           <Link href="/finals">Finals</Link>
-          <Link href="/cities/istanbul">Istanbul</Link>
+          <Link href="/cities/istanbul" aria-current="page">Istanbul</Link>
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>
         </nav>
