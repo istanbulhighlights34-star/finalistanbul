@@ -37,6 +37,7 @@ export default function ArenaPage() {
   const [email, setEmail] = useState("");
   const [nickname, setNickname] = useState("");
   const [message, setMessage] = useState("");
+  const [selectedSport, setSelectedSport] = useState<"football" | "basketball">("football");
   const [groups, setGroups] = useState<{ id: string; name: string }[]>([]);
   const [groupName, setGroupName] = useState("");
   const [selectedGroup, setSelectedGroup] = useState("");
@@ -172,12 +173,12 @@ export default function ArenaPage() {
           <p>One home for every sport, every competition and every circle. Start with a sport or jump back into your season.</p>
         </div>
         <div className={styles.sportDashboard}>
-          <a className={`${styles.sportCard} ${styles.sportCardActive}`} href="#matchroom">
+          <button className={`${styles.sportCard} ${selectedSport === "football" ? styles.sportCardActive : ""}`} type="button" onClick={() => setSelectedSport("football")}>
             <span className={styles.sportNumber}>01</span><strong>Football</strong><small>Domestic leagues · European cups</small><b>Open arena →</b>
-          </a>
-          <a className={styles.sportCard} href="#matchroom">
+          </button>
+          <button className={`${styles.sportCard} ${selectedSport === "basketball" ? styles.sportCardActive : ""}`} type="button" onClick={() => setSelectedSport("basketball")}>
             <span className={styles.sportNumber}>02</span><strong>Basketball</strong><small>EuroLeague · season picks</small><b>Open arena →</b>
-          </a>
+          </button>
           <div className={styles.sportCardComing}>
             <span className={styles.sportNumber}>03+</span><strong>More sports</strong><small>New competitions will appear here as Finals Atlas grows.</small><b>Coming next</b>
           </div>
@@ -191,7 +192,13 @@ export default function ArenaPage() {
           <a href="#matchroom">Open selected arena <b>→</b></a>
           <a href="#standings">View standings <b>→</b></a>
         </div>
-      </section>      <section id="matchroom" className={styles.heroGrid} aria-label="EuroLeague Round 1 predictions">
+      </section>      {selectedSport === "football" && <section className={styles.emptySport} aria-label="Football Arena coming soon">
+        <span className={styles.pulseKicker}>FOOTBALL ARENA</span>
+        <h2>Fixtures are<br /><em>coming next.</em></h2>
+        <p>Football is part of the Finals Atlas plan. Domestic leagues and European cups will appear here when the first football schedule is ready.</p>
+        <div className={styles.emptySportMeta}><span>STATUS</span><strong>PREPARING THE FIXTURES</strong><span>MODE</span><strong>DOMESTIC LEAGUES · EUROPEAN CUPS</strong></div>
+      </section>}
+      <div className={selectedSport === "football" ? styles.hiddenSportContent : ""}>\n      <section id="matchroom" className={styles.heroGrid} aria-label="EuroLeague Round 1 predictions">
         <article className={styles.challenge}>
           <div className={styles.cardTop}><span>ROUND 01 / 10 GAMES</span><span>{timeZone}</span></div>
           <div className={styles.challengeBody}>
@@ -232,7 +239,7 @@ export default function ArenaPage() {
           }}>{team}<span aria-hidden="true">{selected ? "✓" : "+"}</span></button>;
         })}</div><p className={styles.status}>{picks.finalFour.length} / 4 selected · {bonusOpen ? "Open" : "Locked"}</p></div></article>
       </section>
-      <div className={styles.bottomStrip}><span>Match source: <a href="https://mediacentre.euroleague.net/" target="_blank" rel="noreferrer">EuroLeague Media Centre ↗</a></span><span>Independent fan preview · No prize or entry fee</span></div>
+      </div>\n      <div className={styles.bottomStrip}><span>Match source: <a href="https://mediacentre.euroleague.net/" target="_blank" rel="noreferrer">EuroLeague Media Centre ↗</a></span><span>Independent fan preview · No prize or entry fee</span></div>
     </div>
   </main>;
 }
