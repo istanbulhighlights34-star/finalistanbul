@@ -175,7 +175,7 @@ export default function ArenaPage() {
         <div className={styles.sportDashboard}>
           <button className={`${styles.sportCard} ${selectedSport === "football" ? styles.sportCardActive : ""}`} type="button" onClick={() => setSelectedSport("football")}>
             <span className={styles.sportNumber}>01</span><strong>Football</strong><small>Domestic leagues · European cups</small><b>Open arena →</b>
-          </a>
+          </button>
           <button className={`${styles.sportCard} ${selectedSport === "basketball" ? styles.sportCardActive : ""}`} type="button" onClick={() => setSelectedSport("basketball")}>
             <span className={styles.sportNumber}>02</span><strong>Basketball</strong><small>EuroLeague · season picks</small><b>Open arena →</b>
           </button>
