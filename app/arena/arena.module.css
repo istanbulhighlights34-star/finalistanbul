@@ -167,3 +167,19 @@
  .pulseActions { justify-content:space-between; gap:8px; }
  .pulseActions a { font-size:8px; }
 }
+
+
+/* Multi-sport Arena Pulse */
+.pulseDashboard { grid-template-columns: 1fr; }
+.pulseWelcome { border-right:0; border-bottom:1px solid #3b4039; }
+.sportDashboard { display:grid; grid-template-columns:repeat(3,1fr); }
+.sportCard, .sportCardComing { min-height:150px; display:flex; flex-direction:column; align-items:flex-start; justify-content:space-between; gap:8px; padding:20px; border-right:1px solid #3b4039; color:#f5f3eb; text-decoration:none; background:#171b16; }
+.sportCard:last-child, .sportCardComing:last-child { border-right:0; }
+.sportCard:hover, .sportCardActive { background:#28341f; }
+.sportCardComing { color:#858e83; background:#151815; }
+.sportNumber { color:#d5ff3f; font:700 10px Arial,sans-serif; letter-spacing:.12em; }
+.sportCard strong, .sportCardComing strong { font:700 24px/.95 Arial,sans-serif; letter-spacing:-.05em; }
+.sportCard small, .sportCardComing small { min-height:30px; color:#a4ad9e; font:12px/1.35 Arial,sans-serif; }
+.sportCard b, .sportCardComing b { color:#d5ff3f; font:700 9px Arial,sans-serif; letter-spacing:.08em; text-transform:uppercase; }
+.sportCardComing b { color:#788276; }
+@media (max-width:720px) { .sportDashboard { grid-template-columns:1fr; }.sportCard,.sportCardComing { min-height:112px; border-right:0; border-bottom:1px solid #3b4039; }.sportCard:last-child,.sportCardComing:last-child { border-bottom:0; }.sportCard strong,.sportCardComing strong { font-size:21px; } }
