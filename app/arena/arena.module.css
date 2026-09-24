@@ -139,3 +139,31 @@
   .matchRow { min-height: 76px; }
   .result, .resultActive { min-width: 30px; min-height: 30px; }
 }
+
+
+/* Arena Pulse dashboard */
+.pulseDashboard { display:grid; grid-template-columns:1.2fr 1.8fr; gap:0; margin:24px 0 18px; border:1px solid #3b4039; background:linear-gradient(135deg,#20291c,#151915); }
+.pulseWelcome { padding:28px 30px; border-right:1px solid #3b4039; }
+.pulseKicker { color:#d5ff3f; font:700 10px Arial,sans-serif; letter-spacing:.14em; }
+.pulseWelcome h2 { margin:16px 0 8px; font:700 clamp(25px,3vw,42px)/.95 Arial,sans-serif; letter-spacing:-.06em; }
+.pulseWelcome p { max-width:340px; margin:0; color:#aab3a5; font:14px/1.45 Arial,sans-serif; }
+.pulseMetrics { display:grid; grid-template-columns:repeat(3,1fr); }
+.pulseMetrics div { padding:24px 18px; border-right:1px solid #3b4039; }
+.pulseMetrics div:last-child { border-right:0; }
+.pulseMetrics span,.pulseMetrics em { display:block; color:#929b8e; font:700 9px Arial,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+.pulseMetrics strong { display:block; margin:12px 0 7px; color:#f5f3eb; font:700 38px/.9 Arial,sans-serif; letter-spacing:-.07em; }
+.pulseMetrics small { color:#828c80; font-size:15px; letter-spacing:0; }
+.pulseMetrics em { color:#d5ff3f; font-style:normal; letter-spacing:.04em; }
+.pulseActions { grid-column:1/-1; display:flex; gap:20px; padding:14px 18px; border-top:1px solid #3b4039; }
+.pulseActions a { color:#d5ff3f; font:700 10px Arial,sans-serif; letter-spacing:.1em; text-transform:uppercase; }
+.pulseActions b { margin-left:8px; font-size:15px; }
+@media (max-width:720px) {
+ .pulseDashboard { display:block; margin-top:18px; }
+ .pulseWelcome { padding:22px 18px; border-right:0; border-bottom:1px solid #3b4039; }
+ .pulseWelcome h2 { font-size:30px; }
+ .pulseMetrics div { padding:18px 11px; }
+ .pulseMetrics strong { font-size:27px; }
+ .pulseMetrics span,.pulseMetrics em { font-size:7px; letter-spacing:.06em; }
+ .pulseActions { justify-content:space-between; gap:8px; }
+ .pulseActions a { font-size:8px; }
+}
