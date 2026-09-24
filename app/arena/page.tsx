@@ -165,7 +165,23 @@ export default function ArenaPage() {
         </div>}
         {message && <p role="status">{message}</p>}
       </section>}
-      <section className={styles.heroGrid} aria-label="EuroLeague Round 1 predictions">
+      <section className={styles.pulseDashboard} aria-label="Arena Pulse overview">
+        <div className={styles.pulseWelcome}>
+          <span className={styles.pulseKicker}>ARENA PULSE</span>
+          <h2>{account ? `Welcome back, ${nickname || "player"}` : "Your season starts here"}</h2>
+          <p>{account ? "Your circle, your calls and your climb — all in one place." : "Sign in to save your calls, join a circle and climb the standings."}</p>
+        </div>
+        <div className={styles.pulseMetrics}>
+          <div><span>CALLS MADE</span><strong>{complete}<small> / 10</small></strong><em>{openCount} open</em></div>
+          <div><span>SEASON SCORE</span><strong>{standings.find(entry => entry.name === nickname)?.points || 0}</strong><em>{selectedGroup ? "Your circle" : "No circle yet"}</em></div>
+          <div><span>YOUR CIRCLE</span><strong>{groups.length}</strong><em>{groups.length ? "Ready to play" : "Create or join"}</em></div>
+        </div>
+        <div className={styles.pulseActions}>
+          <a href="#matchroom">Open Matchroom <b>→</b></a>
+          <a href="#standings">View Standings <b>→</b></a>
+        </div>
+      </section>
+      <section id="matchroom" className={styles.heroGrid} aria-label="EuroLeague Round 1 predictions">
         <article className={styles.challenge}>
           <div className={styles.cardTop}><span>ROUND 01 / 10 GAMES</span><span>{timeZone}</span></div>
           <div className={styles.challengeBody}>
@@ -196,7 +212,7 @@ export default function ArenaPage() {
           </div>
         </aside>
       </section>
-      <section className={styles.dashboardGrid} aria-label="Season bonus predictions">
+      <section id="standings" className={styles.dashboardGrid} aria-label="Season bonus predictions">
         <article className={styles.panel}><div className={styles.panelHeading}><span>SEASON CALL</span><span>+10 POINTS</span></div><div className={styles.sideBody}><h2>Champion</h2><p className={styles.muted}>Pick the 2026/27 champion before the first game.</p><label className={styles.selectLabel} htmlFor="champion">Choose a team</label><select id="champion" value={picks.champion} disabled={!bonusOpen} onChange={(event) => { if (Date.now() + offset.current < firstLock) update({ ...picks, champion: event.target.value }); else setNow(Date.now() + offset.current); }}><option value="">Select a team</option>{teams.map((team) => <option key={team}>{team}</option>)}</select></div></article>
         <article className={styles.panel}><div className={styles.panelHeading}><span>FINAL FOUR CALL</span><span>+3 PER TEAM</span></div><div className={styles.sideBody}><h2>Final Four</h2><p className={styles.muted}>Choose up to four teams before the first game. Each correct team earns three points.</p><div className={styles.teamPicker}>{teams.map((team) => {
           const selected = picks.finalFour.includes(team);
