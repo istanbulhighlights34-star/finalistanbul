@@ -68,10 +68,10 @@ export default function EventGuide({
           <Link href="/cities/istanbul">Istanbul</Link>
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>
-          <Link href="/arena">Arena</Link>
         </nav>
         <div className="header-actions">
           <Link className="header-blog" href="/blog">Journal</Link>
+          <Link className="header-blog" href="/arena">Arena</Link>
           <Link className="header-cta" href={cityHref}>{cityName}</Link>
         </div>
       </header>
