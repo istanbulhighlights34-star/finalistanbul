@@ -42,8 +42,8 @@ export default function VenueGuide({
     <main className="content-page">
       <header className="page-header">
         <Link className="brand" href="/"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></Link>
-        <nav><Link href="/finals">Finals</Link><Link href={cityHref}>{city}</Link><Link href="/arena">Arena</Link></nav>
-        <div className="header-actions"><Link className="header-blog" href="/blog">Journal</Link><Link className="header-cta" href="/finals">2027 Calendar</Link></div>
+        <nav><Link href="/finals">Finals</Link><Link href={cityHref}>{city}</Link></nav>
+        <div className="header-actions"><Link className="header-blog" href="/blog">Journal</Link><Link className="header-blog" href="/arena">Arena</Link><Link className="header-cta" href="/finals">2027 Calendar</Link></div>
       </header>
 
       <section className="page-hero">
