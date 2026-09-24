@@ -81,7 +81,8 @@ export default function FinalsPage() {
         </nav>
         <div className="header-actions">
           <Link className="header-blog" href="/blog">Journal</Link>
-          <Link className="header-cta" href="/">Home</Link>
+          <Link className="header-blog" href="/arena">Arena</Link>
+          <Link className="header-cta" href="/finals">Explore 2027</Link>
         </div>
       </header>
       <section className="page-hero">

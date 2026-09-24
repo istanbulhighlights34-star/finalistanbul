@@ -20,7 +20,7 @@ export default function FrankfurtPage() {
       <header className="page-header">
         <Link className="brand" href="/"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></Link>
         <nav><Link href="/finals">Finals</Link><Link href="/cities/istanbul">Istanbul</Link><Link href="/cities/madrid">Madrid</Link><Link href="/cities/frankfurt">Frankfurt</Link></nav>
-        <div className="header-actions"><Link className="header-blog" href="/blog">Journal</Link><Link className="header-cta" href="/finals">2027 Calendar</Link></div>
+        <div className="header-actions"><Link className="header-blog" href="/blog">Journal</Link><Link className="header-blog" href="/arena">Arena</Link><Link className="header-cta" href="/finals">Explore 2027</Link></div>
       </header>
 
       <section className="page-hero city-hero">
