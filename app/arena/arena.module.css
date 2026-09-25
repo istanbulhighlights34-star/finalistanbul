@@ -294,3 +294,79 @@
   .header { min-height: 70px; padding: 18px 20px; grid-template-columns: 1fr auto; }
   .header nav, .headerActions { display: none; }
 }
+
+/* Mobile Arena polish: compact forms, no horizontal overflow, readable cards. */
+@media (max-width: 720px) {
+  .shell {
+    width: min(92vw, 520px);
+    padding: 24px 0 48px;
+    overflow-x: hidden;
+  }
+  .header :global(.brand-mark) {
+    width: 30px;
+    height: 30px;
+  }
+  .header :global(.brand-name) {
+    font-size: 15px;
+  }
+  .accountForm {
+    width: 100%;
+    max-width: 100%;
+  }
+  .accountForm p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .accountFields {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .accountFields input {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+  .accountFields .result {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .notice {
+    display: block;
+    margin-top: 14px;
+    padding: 13px 14px;
+    font-size: 13px;
+  }
+  .notice strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .intro h1 {
+    font-size: clamp(42px, 14vw, 70px);
+    line-height: .86;
+  }
+  .introText {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+  .sportDashboard,
+  .dashboardGrid,
+  .heroGrid {
+    min-width: 0;
+  }
+  .sportCard strong,
+  .sportCardComing strong {
+    font-size: 20px;
+  }
+  .matchRow {
+    min-width: 0;
+    overflow: hidden;
+  }
+}
