@@ -275,3 +275,17 @@
   color: #d5ff3f;
   border-color: #d5ff3f;
 }
+
+
+/* Match the homepage header control dimensions exactly. */
+.headerLink {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+.headerButton {
+  padding: 11px 15px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
