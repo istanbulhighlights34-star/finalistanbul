@@ -270,3 +270,17 @@
     text-align: left;
   }
 }
+
+
+/* Match the homepage Explore 2027 control exactly. */
+.cta {
+  padding: 11px 15px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .12em;
+}
+.nav {
+  gap: 32px;
+  font-size: 12px;
+}
