@@ -26,9 +26,6 @@ export const metadata: Metadata = {
     "host city guides",
     "sports travel",
   ],
-  alternates: {
-    canonical: "/",
-  },
   verification: {
     google: "eN-xIzqw7433dK0SioG2ki9-CpoHl0N73yCcI8Sm1cY",
   },
