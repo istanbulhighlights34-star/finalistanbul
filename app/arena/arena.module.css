@@ -370,3 +370,30 @@
     overflow: hidden;
   }
 }
+
+@media (max-width: 720px) {
+  .accountForm,
+  .accountFields {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .accountFields input[type="email"] {
+    display: block !important;
+    width: 100% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    box-sizing: border-box !important;
+    flex: 0 0 44px !important;
+    padding: 10px 12px !important;
+    line-height: 24px !important;
+  }
+  .accountFields .result {
+    display: block !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    box-sizing: border-box !important;
+    flex: 0 0 42px !important;
+  }
+}
