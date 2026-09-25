@@ -2460,3 +2460,12 @@ footer p:last-child {
 
   .ticket-feature img { height: 170px; }
 }
+
+
+/* Shared top navigation: keep the layout fixed and mark only the current page. */
+.site-header nav a[aria-current="page"],
+.page-header nav a[aria-current="page"],
+.header-blog[aria-current="page"],
+.blog-header-journal[aria-current="page"] {
+  color: var(--acid);
+}
