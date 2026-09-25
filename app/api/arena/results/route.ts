@@ -8,10 +8,16 @@ export async function GET() {
   }
   try {
     const rows = await database()`SELECT game_id, home_score, away_score FROM arena_results`;
-    const results = Object.fromEntries(rows
+    let live: Record<string, { home: number; away: number; status: string; updatedAt: string }> = {};
+    try {
+      const scores = await database()`SELECT game_id, home_score, away_score, status, updated_at FROM arena_live_scores`;
+      live = Object.fromEntries(scores.filter(row => fixtures.some(game => game[0] === row.game_id))
+        .map(row => [row.game_id, { home: Number(row.home_score), away: Number(row.away_score), status: String(row.status), updatedAt: String(row.updated_at) }]));
+    } catch { /* Existing databases may not have the live table yet. */ }
+    const finals = Object.fromEntries(rows
       .filter(row => fixtures.some(game => game[0] === row.game_id))
-      .map(row => [row.game_id, { home: Number(row.home_score), away: Number(row.away_score) }]));
-    return Response.json({ results, available: true }, { headers: { "Cache-Control": "no-store" } });
+      .map(row => [row.game_id, { home: Number(row.home_score), away: Number(row.away_score), status: "final" }]));
+    return Response.json({ results: { ...live, ...finals }, available: true }, { headers: { "Cache-Control": "no-store" } });
   } catch {
     return Response.json({ results: {}, available: false }, { status: 503, headers: { "Cache-Control": "no-store" } });
   }
