@@ -2493,3 +2493,13 @@ footer p:last-child {
   line-height: 1;
   letter-spacing: .12em;
 }
+
+.home-fixture-match {
+  min-width: 0;
+}
+.home-fixture-match .fixture-team {
+  min-width: 0;
+}
+.home-fixture-match .fixture-team strong {
+  white-space: nowrap;
+}

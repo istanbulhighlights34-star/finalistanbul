@@ -55,9 +55,27 @@ const guides = [
 ];
 
 const spanishSuperCup = [
-  ["02 FEB", "Barcelona — Atlético Madrid", "22:00 local · Chobani Stadium"],
-  ["03 FEB", "Real Sociedad — Real Madrid", "22:00 local · Tüpraş Stadium"],
-  ["06 FEB", "Spanish Super Cup Final", "22:00 local · RAMS Park"],
+  {
+    date: "02 FEB",
+    home: "Barcelona",
+    away: "Atlético Madrid",
+    homeLogo: "https://assets.footylogos.com/logos/fc-barcelona/fc-barcelona-logo-footylogos.svg",
+    awayLogo: "https://assets.footylogos.com/logos/atletico-madrid/atletico-madrid-logo-footylogos.svg",
+    meta: "22:00 local · Chobani Stadium",
+  },
+  {
+    date: "03 FEB",
+    home: "Real Sociedad",
+    away: "Real Madrid",
+    homeLogo: "https://assets.footylogos.com/logos/real-sociedad/real-sociedad-logo-footylogos.svg",
+    awayLogo: "https://assets.footylogos.com/logos/real-madrid/real-madrid-logo-footylogos.svg",
+    meta: "22:00 local · Tüpraş Stadium",
+  },
+  {
+    date: "06 FEB",
+    title: "Spanish Super Cup Final",
+    meta: "22:00 local · RAMS Park",
+  },
 ];
 
 const latestArticles = [
@@ -236,11 +254,25 @@ export default function Home() {
             football — and a city worth staying for.
           </p>
           <div className="fixtures">
-            {spanishSuperCup.map(([date, match, meta]) => (
-              <div className="fixture" key={match}>
-                <span>{date}</span>
-                <strong>{match}</strong>
-                <small>{meta}</small>
+            {spanishSuperCup.map((fixture) => (
+              <div className="fixture" key={fixture.date}>
+                <span>{fixture.date}</span>
+                {fixture.homeLogo && fixture.awayLogo ? (
+                  <div className="fixture-match-line home-fixture-match">
+                    <div className="fixture-team fixture-team-home">
+                      <strong>{fixture.home}</strong>
+                      <img src={fixture.homeLogo} alt="" aria-hidden="true" loading="lazy" />
+                    </div>
+                    <span className="fixture-dash">—</span>
+                    <div className="fixture-team fixture-team-away">
+                      <img src={fixture.awayLogo} alt="" aria-hidden="true" loading="lazy" />
+                      <strong>{fixture.away}</strong>
+                    </div>
+                  </div>
+                ) : (
+                  <strong>{fixture.title}</strong>
+                )}
+                <small>{fixture.meta}</small>
               </div>
             ))}
           </div>
