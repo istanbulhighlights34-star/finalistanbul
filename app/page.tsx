@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Brand from "./_components/Brand";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const events = [
   {
