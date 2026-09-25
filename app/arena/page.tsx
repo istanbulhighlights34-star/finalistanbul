@@ -8,12 +8,12 @@ type Game = { id: string; home: string; away: string; tipoff: string; result?: {
 type Picks = { games: Record<string, "1" | "2">; topScorer: string; champion: string; finalFour: string[] };
 // EuroLeague Media Centre lists these times in CEST (UTC+2).
 const games: Game[] = [
-  { id: "hta-bay", home: "Hapoel Tel Aviv", away: "Bayern Munich", tipoff: "2026-09-24T16:00:00Z", result: { home: 84, away: 86 } },
-  { id: "dub-rmb", home: "Dubai Basketball", away: "Real Madrid", tipoff: "2026-09-24T16:00:00Z", result: { home: 78, away: 77 } },
+  { id: "hta-bay", home: "Hapoel Tel Aviv", away: "Bayern Munich", tipoff: "2026-09-24T16:00:00Z" },
+  { id: "dub-rmb", home: "Dubai Basketball", away: "Real Madrid", tipoff: "2026-09-24T16:00:00Z" },
   { id: "czv-zal", home: "Crvena Zvezda", away: "Žalgiris Kaunas", tipoff: "2026-09-24T18:00:00Z" },
   { id: "pao-pbb", home: "Panathinaikos", away: "Paris Basketball", tipoff: "2026-09-24T18:15:00Z" },
   { id: "kba-oly", home: "Baskonia", away: "Olympiacos", tipoff: "2026-09-24T18:30:00Z" },
-  { id: "bar-efs", home: "FC Barcelona", away: "Anadolu Efes", tipoff: "2026-09-24T18:30:00Z", result: { home: 89, away: 82 } },
+  { id: "bar-efs", home: "FC Barcelona", away: "Anadolu Efes", tipoff: "2026-09-24T18:30:00Z" },
   { id: "asv-mta", home: "ASVEL", away: "Maccabi Tel Aviv", tipoff: "2026-09-24T18:45:00Z" },
   { id: "bjk-vbc", home: "Beşiktaş", away: "Valencia Basket", tipoff: "2026-09-25T17:00:00Z" },
   { id: "fbt-vir", home: "Fenerbahçe", away: "Virtus Bologna", tipoff: "2026-09-25T17:45:00Z" },
@@ -43,6 +43,7 @@ export default function ArenaPage() {
   const [selectedGroup, setSelectedGroup] = useState("");
   const [standings, setStandings] = useState<{ name: string; points: number; picks: number }[]>([]);
   const [inviteUrl, setInviteUrl] = useState("");
+  const [results, setResults] = useState<Record<string, { home: number; away: number }>>({});
   const offset = useRef(0);
 
   useEffect(() => {
@@ -72,6 +73,21 @@ export default function ArenaPage() {
     const interval = setInterval(() => setNow(Date.now() + offset.current), 10_000);
     const resync = setInterval(() => { void syncClock(); }, 60_000);
     return () => { clearInterval(interval); clearInterval(resync); };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    async function refreshResults() {
+      try {
+        const response = await fetch("/api/arena/results", { cache: "no-store" });
+        if (!response.ok) return;
+        const data = await response.json() as { results?: Record<string, { home: number; away: number }> };
+        if (active && data.results) setResults(data.results);
+      } catch { /* Retain the last verified results until the next refresh. */ }
+    }
+    void refreshResults();
+    const interval = setInterval(() => { void refreshResults(); }, 60_000);
+    return () => { active = false; clearInterval(interval); };
   }, []);
 
   useEffect(() => {
@@ -223,14 +239,15 @@ export default function ArenaPage() {
             <p className={styles.muted}>1 = home win · 2 = away win. Each game closes two minutes before tip-off. Times below are local to you.</p>
             <div className={styles.matchList}>{games.map((game) => {
               const locked = now === null || now >= Date.parse(game.tipoff) - 120_000;
+              const result = results[game.id];
               return <div className={styles.matchRow} key={game.id}>
                 <div className={styles.matchInfo}><time dateTime={game.tipoff}>{now === null ? "Checking local time…" : formatTime(game.tipoff)}</time><span>{now === null ? "Checking" : locked ? "Locked" : "Open"}</span></div>
                 <div className={styles.matchTeams}><strong>{game.home}</strong><span>vs</span><strong>{game.away}</strong></div>
                 <div className={styles.resultButtons} aria-label={`${game.home} vs ${game.away} winner`}>
-                  {(["1", "2"] as const).map((choice) => <button key={choice} type="button" disabled={game.result ? true : locked} aria-label={choice === "1" ? `${game.home} wins` : `${game.away} wins`} aria-pressed={picks.games[game.id] === choice} className={game.result ? (game.result.home === game.result.away ? styles.finalScoreBox : ((choice === "1" && game.result.home > game.result.away) || (choice === "2" && game.result.away > game.result.home) ? styles.finalWinner : styles.finalScoreBox)) : (picks.games[game.id] === choice ? styles.resultActive : styles.result)} onClick={() => {
+                  {(["1", "2"] as const).map((choice) => <button key={choice} type="button" disabled={result ? true : locked} aria-label={choice === "1" ? `${game.home} wins` : `${game.away} wins`} aria-pressed={picks.games[game.id] === choice} className={result ? ((choice === "1" && result.home > result.away) || (choice === "2" && result.away > result.home) ? styles.finalWinner : styles.finalScoreBox) : (picks.games[game.id] === choice ? styles.resultActive : styles.result)} onClick={() => {
                     if (Date.now() + offset.current >= Date.parse(game.tipoff) - 120_000) { setNow(Date.now() + offset.current); return; }
                     update({ ...picks, games: { ...picks.games, [game.id]: choice } });
-                  }}>{game.result ? (choice === "1" ? game.result.home : game.result.away) : choice}</button>)}
+                  }}>{result ? (choice === "1" ? result.home : result.away) : choice}</button>)}
                 </div>
               </div>;
             })}</div>
