@@ -183,6 +183,31 @@ export default function EventGuide({
         </figure>
       </section>
 
+      <section className="trip-decisions" aria-labelledby="trip-decisions-heading">
+        <p className="kicker">TRIP PLANNING</p>
+        <h2 id="trip-decisions-heading">HOTELS, FLIGHTS & TICKETS</h2>
+        <div className="trip-decisions-grid">
+          <Link href={`${cityHref}/where-to-stay`}>
+            <span>01 / HOTELS</span>
+            <strong>Choose a base in {cityName}</strong>
+            <p>Compare neighborhoods and connections before choosing accommodation.</p>
+            <b>Explore hotel areas →</b>
+          </Link>
+          <Link href={guideLinks.find((guide) => /airport/i.test(guide.href))?.href || cityHref}>
+            <span>02 / FLIGHTS</span>
+            <strong>Plan your arrival</strong>
+            <p>Check airport and city transport before booking flights or transfers.</p>
+            <b>Explore arrival routes →</b>
+          </Link>
+          <a href="#ticket-status">
+            <span>03 / TICKETS</span>
+            <strong>Check ticket status</strong>
+            <p>Find out what is confirmed and follow the organizer for sales updates.</p>
+            <b>Read ticket guidance ↓</b>
+          </a>
+        </div>
+      </section>
+
       <section className="planning-section">
         <p className="kicker">KEEP EXPLORING</p>
         <h2>BUILD THE FINAL AROUND THE CITY</h2>
@@ -192,8 +217,8 @@ export default function EventGuide({
           {venueLinks.map((v) => <Link href={v.href} key={v.href}><span>{v.label} →</span></Link>)}
           <Link href="/finals"><span>2027 finals calendar →</span></Link>
         </div>
-        <p className="source-note">
-          Ticketing, fan-zone, gate and event-specific supporter transport details are pending official organizer publication. Finals Atlas will not publish unverified details as confirmed information.
+        <p className="source-note" id="ticket-status">
+          Official ticket-sale details and event-specific supporter arrangements are pending publication. Check the organizer and participating clubs for authorized sales; Finals Atlas does not sell tickets.
         </p>
       </section>
 
