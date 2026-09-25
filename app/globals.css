@@ -2479,3 +2479,17 @@ footer p:last-child {
   gap: 32px;
   font-size: 12px;
 }
+
+
+/* Exact homepage header typography shared by every page. */
+.page-header .header-actions,
+.blog-header-actions {
+  gap: 18px;
+}
+.page-header .header-blog,
+.blog-header-journal {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .12em;
+}
