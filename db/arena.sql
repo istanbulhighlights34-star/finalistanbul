@@ -42,6 +42,13 @@ CREATE TABLE IF NOT EXISTS arena_results (
   away_score integer NOT NULL CHECK (away_score >= 0 AND away_score <> home_score),
   updated_at timestamptz NOT NULL DEFAULT now()
 );
+CREATE TABLE IF NOT EXISTS arena_live_scores (
+  game_id text PRIMARY KEY,
+  home_score integer NOT NULL CHECK (home_score >= 0),
+  away_score integer NOT NULL CHECK (away_score >= 0),
+  status text NOT NULL CHECK (status IN ('live', 'final')),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
 CREATE TABLE IF NOT EXISTS arena_season_results (
   id integer PRIMARY KEY CHECK (id = 1),
   champion text NOT NULL,

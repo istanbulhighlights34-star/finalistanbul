@@ -1363,6 +1363,27 @@ footer p:last-child {
   background: #111;
 }
 
+.trip-decisions {
+  padding: 76px 42px;
+  background: #e9e6dc;
+  color: #111;
+}
+
+.trip-decisions h2 { margin: 12px 0 32px; font-size: clamp(30px, 5vw, 64px); line-height: 1; }
+.trip-decisions-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.trip-decisions-grid > a { display: flex; flex-direction: column; min-height: 240px; padding: 24px; background: #fff; color: inherit; text-decoration: none; }
+.trip-decisions-grid > a:hover, .trip-decisions-grid > a:focus-visible { outline: 2px solid #111; outline-offset: -2px; }
+.trip-decisions-grid span { font-size: 12px; font-weight: 700; letter-spacing: .1em; }
+.trip-decisions-grid strong { margin-top: 24px; font-size: 24px; line-height: 1.1; }
+.trip-decisions-grid p { color: #625f58; line-height: 1.5; }
+.trip-decisions-grid b { margin-top: auto; font-size: 13px; text-transform: uppercase; }
+
+@media (max-width: 720px) {
+  .trip-decisions { padding: 56px 20px; }
+  .trip-decisions-grid { grid-template-columns: 1fr; }
+  .trip-decisions-grid > a { min-height: 190px; }
+}
+
 .planning-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
