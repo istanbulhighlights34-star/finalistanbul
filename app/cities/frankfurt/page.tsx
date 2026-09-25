@@ -20,6 +20,14 @@ export default function FrankfurtPage() {
       <header className="page-header">
         <Link className="brand" href="/"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></Link>
         <nav><Link href="/finals">Finals</Link><Link href="/cities/istanbul">Istanbul</Link><Link href="/cities/madrid">Madrid</Link><Link href="/cities/frankfurt" aria-current="page">Frankfurt</Link></nav>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation"><span aria-hidden="true">☰</span></summary>
+          <div className="mobile-menu-panel">
+            <Link href="/finals">Explore 2027</Link>
+            <Link href="/blog">Journal</Link>
+            <Link href="/arena">Arena</Link>
+          </div>
+        </details>
         <div className="header-actions"><Link className="header-blog" href="/blog">Journal</Link><Link className="header-blog" href="/arena">Arena</Link><Link className="header-cta" href="/finals">Explore 2027</Link></div>
       </header>
 

@@ -10,6 +10,14 @@ export default function Blog() {
     <header className={styles.header}>
       <Link className={styles.brand} href="/" aria-label="Finals Atlas home"><img className={styles.brandMark} src="/icon.svg" alt="" aria-hidden="true" /><span className={styles.brandName}><span>FINALS</span><span>ATLAS</span></span></Link>
       <nav className={styles.nav}><Link href="/finals">Finals</Link><Link href="/cities/istanbul">Istanbul</Link><Link href="/cities/madrid">Madrid</Link><Link href="/cities/frankfurt">Frankfurt</Link></nav>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation"><span aria-hidden="true">☰</span></summary>
+          <div className="mobile-menu-panel">
+            <Link href="/finals">Explore 2027</Link>
+            <Link href="/blog">Journal</Link>
+            <Link href="/arena">Arena</Link>
+          </div>
+        </details>
       <div className="blog-header-actions"><Link className="blog-header-journal" href="/blog" aria-current="page">Journal</Link><Link className="blog-header-journal" href="/arena">Arena</Link><Link className={styles.cta} href="/finals">Explore 2027</Link></div>
     </header>
     <section className={styles.hero}><p className={styles.kicker}>FINALS ATLAS / JOURNAL</p><h1>TRAVEL SMARTER FOR THE FINAL</h1><p>Field notes and evergreen planning guides for the days around the match — built to complement our city, stadium and transport guides without turning unconfirmed event details into facts.</p></section>

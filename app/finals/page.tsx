@@ -79,6 +79,14 @@ export default function FinalsPage() {
           <Link href="/cities/madrid">Madrid</Link>
           <Link href="/cities/frankfurt">Frankfurt</Link>
         </nav>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation"><span aria-hidden="true">☰</span></summary>
+          <div className="mobile-menu-panel">
+            <Link href="/finals">Explore 2027</Link>
+            <Link href="/blog">Journal</Link>
+            <Link href="/arena">Arena</Link>
+          </div>
+        </details>
         <div className="header-actions">
           <Link className="header-blog" href="/blog">Journal</Link>
           <Link className="header-blog" href="/arena">Arena</Link>
