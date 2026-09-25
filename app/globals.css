@@ -2469,3 +2469,13 @@ footer p:last-child {
 .blog-header-journal[aria-current="page"] {
   color: var(--acid);
 }
+
+
+/* Keep internal page headers identical to the homepage header geometry. */
+.page-header {
+  padding: 28px 42px;
+}
+.page-header nav {
+  gap: 32px;
+  font-size: 12px;
+}
