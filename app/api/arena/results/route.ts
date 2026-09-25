@@ -2,6 +2,21 @@ import { database, fixtures, jsonError, sameOrigin, teams } from "../../../../li
 import { timingSafeEqual } from "node:crypto";
 
 export const runtime = "nodejs";
+export async function GET() {
+  if (!process.env.DATABASE_URL) {
+    return Response.json({ results: {}, available: false }, { headers: { "Cache-Control": "no-store" } });
+  }
+  try {
+    const rows = await database()`SELECT game_id, home_score, away_score FROM arena_results`;
+    const results = Object.fromEntries(rows
+      .filter(row => fixtures.some(game => game[0] === row.game_id))
+      .map(row => [row.game_id, { home: Number(row.home_score), away: Number(row.away_score) }]));
+    return Response.json({ results, available: true }, { headers: { "Cache-Control": "no-store" } });
+  } catch {
+    return Response.json({ results: {}, available: false }, { status: 503, headers: { "Cache-Control": "no-store" } });
+  }
+}
+
 export async function POST(request: Request) {
   if (!sameOrigin(request)) return jsonError("Invalid origin", 403);
   const expected = process.env.ARENA_RESULTS_SECRET;
