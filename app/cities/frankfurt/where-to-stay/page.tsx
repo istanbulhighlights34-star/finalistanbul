@@ -37,6 +37,7 @@ export default function Page() {
         { href: "/finals/europa-league-final-frankfurt-2027", label: "Europa League Final Frankfurt 2027" },
         { href: "/stadiums/stadion-frankfurt", label: "Stadion Frankfurt guide" },
         { href: "/cities/frankfurt", label: "Frankfurt city hub" },
+        { href: "/blog/frankfurt-europa-league-final-trip-plan", label: "Frankfurt final trip journal" },
       ]}
       sourceLinks={[
         { href: "https://www.frankfurt-airport.com/en/transport-and-parking/to-from-the-airport/travel-by-train.html", label: "Frankfurt Airport — Rail connections" },
