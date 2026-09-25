@@ -148,8 +148,17 @@ export default function ArenaPage() {
   return <main className={styles.page}>
     <header className={styles.header}>
       <Link className="brand" href="/" aria-label="Finals Atlas Arena home"><img className="brand-mark" src="/icon.svg" alt="" aria-hidden="true" /><span className="brand-name"><span>FINALS</span><span>ATLAS</span></span></Link>
-      <nav aria-label="Arena navigation"><Link className={styles.active} href="/arena">Arena</Link><Link href="/blog">Journal</Link></nav>
-      <Link className={styles.headerButton} href="/">Explore Finals ↗</Link>
+      <nav aria-label="Primary navigation">
+        <Link href="/finals">Finals</Link>
+        <Link href="/cities/istanbul">Istanbul</Link>
+        <Link href="/cities/madrid">Madrid</Link>
+        <Link href="/cities/frankfurt">Frankfurt</Link>
+      </nav>
+      <div className={styles.headerActions}>
+        <Link className={styles.headerLink} href="/blog">Journal</Link>
+        <Link className={`${styles.headerLink} ${styles.active}`} href="/arena" aria-current="page">Arena</Link>
+        <Link className={styles.headerButton} href="/finals">Explore 2027</Link>
+      </div>
     </header>
     <div className={styles.shell}>
       <div className={styles.topline}><span>FINALS ATLAS / ARENA PULSE</span><span>EUROLEAGUE · 2026/27</span></div>
