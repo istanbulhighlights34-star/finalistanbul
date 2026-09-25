@@ -83,6 +83,7 @@ export default function FrankfurtPage() {
           <Link href="/cities/frankfurt/airport-to-stadion-frankfurt"><span>Airport to stadium →</span></Link>
           <Link href="/finals/europa-league-final-frankfurt-2027"><span>Europa League Final →</span></Link>
           <Link href="/stadiums/stadion-frankfurt"><span>Stadion Frankfurt guide →</span></Link>
+          <Link href="/blog/frankfurt-europa-league-final-trip-plan"><span>Frankfurt final trip journal →</span></Link>
         </div>
       </section>
 
