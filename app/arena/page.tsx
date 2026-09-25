@@ -154,6 +154,14 @@ export default function ArenaPage() {
         <Link href="/cities/madrid">Madrid</Link>
         <Link href="/cities/frankfurt">Frankfurt</Link>
       </nav>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation"><span aria-hidden="true">☰</span></summary>
+          <div className="mobile-menu-panel">
+            <Link href="/finals">Explore 2027</Link>
+            <Link href="/blog">Journal</Link>
+            <Link href="/arena">Arena</Link>
+          </div>
+        </details>
       <div className={styles.headerActions}>
         <Link className={styles.headerLink} href="/blog">Journal</Link>
         <Link className={`${styles.headerLink} ${styles.active}`} href="/arena" aria-current="page">Arena</Link>
