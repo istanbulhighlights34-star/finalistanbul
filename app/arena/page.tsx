@@ -43,7 +43,7 @@ export default function ArenaPage() {
   const [selectedGroup, setSelectedGroup] = useState("");
   const [standings, setStandings] = useState<{ name: string; points: number; picks: number }[]>([]);
   const [inviteUrl, setInviteUrl] = useState("");
-  const [results, setResults] = useState<Record<string, { home: number; away: number }>>({});
+  const [results, setResults] = useState<Record<string, { home: number; away: number; status: string; updatedAt?: string }>>({});
   const offset = useRef(0);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function ArenaPage() {
       try {
         const response = await fetch("/api/arena/results", { cache: "no-store" });
         if (!response.ok) return;
-        const data = await response.json() as { results?: Record<string, { home: number; away: number }> };
+        const data = await response.json() as { results?: Record<string, { home: number; away: number; status: string; updatedAt?: string }> };
         if (active && data.results) setResults(data.results);
       } catch { /* Retain the last verified results until the next refresh. */ }
     }
@@ -241,10 +241,10 @@ export default function ArenaPage() {
               const locked = now === null || now >= Date.parse(game.tipoff) - 120_000;
               const result = results[game.id];
               return <div className={styles.matchRow} key={game.id}>
-                <div className={styles.matchInfo}><time dateTime={game.tipoff}>{now === null ? "Checking local time…" : formatTime(game.tipoff)}</time><span>{now === null ? "Checking" : locked ? "Locked" : "Open"}</span></div>
+                <div className={styles.matchInfo}><time dateTime={game.tipoff}>{now === null ? "Checking local time…" : formatTime(game.tipoff)}</time><span>{result?.status === "live" ? "Live" : result?.status === "final" ? "Final" : now === null ? "Checking" : locked ? "Locked" : "Open"}</span></div>
                 <div className={styles.matchTeams}><strong>{game.home}</strong><span>vs</span><strong>{game.away}</strong></div>
                 <div className={styles.resultButtons} aria-label={`${game.home} vs ${game.away} winner`}>
-                  {(["1", "2"] as const).map((choice) => <button key={choice} type="button" disabled={result ? true : locked} aria-label={choice === "1" ? `${game.home} wins` : `${game.away} wins`} aria-pressed={picks.games[game.id] === choice} className={result ? ((choice === "1" && result.home > result.away) || (choice === "2" && result.away > result.home) ? styles.finalWinner : styles.finalScoreBox) : (picks.games[game.id] === choice ? styles.resultActive : styles.result)} onClick={() => {
+                  {(["1", "2"] as const).map((choice) => <button key={choice} type="button" disabled={result ? true : locked} aria-label={choice === "1" ? `${game.home} wins` : `${game.away} wins`} aria-pressed={picks.games[game.id] === choice} className={result?.status === "final" ? ((choice === "1" && result.home > result.away) || (choice === "2" && result.away > result.home) ? styles.finalWinner : styles.finalScoreBox) : result ? styles.finalScoreBox : (picks.games[game.id] === choice ? styles.resultActive : styles.result)} onClick={() => {
                     if (Date.now() + offset.current >= Date.parse(game.tipoff) - 120_000) { setNow(Date.now() + offset.current); return; }
                     update({ ...picks, games: { ...picks.games, [game.id]: choice } });
                   }}>{result ? (choice === "1" ? result.home : result.away) : choice}</button>)}
